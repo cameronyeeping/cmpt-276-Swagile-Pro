@@ -6,7 +6,7 @@ using namespace std;
 
 void start_ui() {
     int selection;
-
+    // TODO: put in do/while loop
     string directory;
         selection = display_main_menu();
     switch (selection) {
