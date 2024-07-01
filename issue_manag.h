@@ -1,5 +1,5 @@
-#ifndef ISSUE_MAINT_H
-#define ISSUE_MAINT_H
+#ifndef ISSUE_MANAG_H
+#define ISSUE_MANAG_H
 #include <string>
 
 void create_change_request();
