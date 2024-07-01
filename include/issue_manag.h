@@ -6,7 +6,7 @@
 void create_change_request();
 
 // Displays a query for an exisiting change item
-void query_change_item();
+void change_item_info();
 
 // Creates a new change item in the system
 void create_change_item();
