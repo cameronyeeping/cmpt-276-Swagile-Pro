@@ -2,8 +2,9 @@
 #define ISSUE_MAINT_H
 #include <string>
 
-void create_change_request(std::string user_name, std::string release_id, std::string date, std::string priority);
+void create_change_request();
 void query_change_item();
 void create_change_item();
 void update_change_item();
+
 #endif
