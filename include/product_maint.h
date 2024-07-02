@@ -8,11 +8,14 @@
  *        - Added update_product_release(), delete_product_release()
  * Rev 1. - 2024-07-01 Original by Ananya Singh
  * --------------------------------------------------
- * This module contains the mid-level functions for 
- * the management of products. 
+ * This module is used to create new products and new product releases. It exports two functions: create_product()
+ * and create_product_release(). 
 */
+
+
 #ifndef PRODUCT_MAINT_H
 #define PRODUCT_MAINT_H
+
 #include <string>
 
 /*
@@ -39,5 +42,6 @@ void update_product_release();
 */
 void delete_product_release();
 //==============================
+
 
 #endif

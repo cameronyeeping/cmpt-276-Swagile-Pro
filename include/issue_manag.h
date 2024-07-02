@@ -1,12 +1,14 @@
 /*
- * Module: Issue management
- * Rev 2. - 2024-07-02 Modified by Cameron Yee-Ping
- *        - Added Documentation
- * Rev 1. - 2024-07-01 Original by Ananya Singh
- * --------------------------------------------------
- * This module contains the mid-level functions for 
- * issue management.
+ * Module: Issue Maintenance
+ * Revision History:
+ * Rev. 2 - 2024/07/02 Modified by Cameron Yee-Ping
+ *          - Updated documentation
+ * Rev. 1 - 2024/07/01 Original by Ananya Singh
+ * ------------------------------------------------
+ * This module is used to create change requests and change items. It is also used to update and display info
+ * related to an existing change item in the swagile pro system. 
 */
+
 #ifndef ISSUE_MANAG_H
 #define ISSUE_MANAG_H
 #include <string>
@@ -35,14 +37,7 @@ void query_change_item();
  * given inputs.
 */
 void create_change_item();
-//===============================
 
-/*
- * update_change_item() first displays all change items concisely, and then polls for user input.
- * The user input MUST be a valid changeID. After checking the validity, it polls again for 
- * product name, description, anticipated release date, and completion state. It checks the validity of these new inputs, and then
- * passes control to the issue queries module to update the change item.
-*/
-void update_change_item();
+
 
 #endif
