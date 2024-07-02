@@ -19,11 +19,13 @@
 #include <sqlite3.h>
 
 /*
- * add_change_request_query() takes 5 parameters, which are used as values to create 
- * a row in the change request table.
+ * add_change_request_query() takes 6 parameters, which are used as values to create 
+ * a row in the change request table. Note: the releaseID (primary key) is 
+ * automatically generated
 */
 void add_change_request_query(std::string userID,   // user ID of the individual that submitted the change request
                             std::string name,       // name of Product that the the change request is for
+                            std::string date,       // date of report
                             std::string releaseID,  // release id of the product with the bug
                             std::string fixed_releaseID, // anticipated release ID
                             std::string completion  // completion state
@@ -33,7 +35,8 @@ void add_change_request_query(std::string userID,   // user ID of the individual
 /*
  * update_change_request_query() creates an UPDATE TABLE query that edits a row in the change request table
 */
-void update_change_request_query(std::string userID,    // user ID of the individual that submitted the change request
+void update_change_request_query(
+                                std::string userID,    // user ID of the individual that submitted the change request
                                 std::string name, // name of Product that the the change request is for
                                 std::string fixed_releaseID, // anticipated release ID
                                 std::string completion // completion state
@@ -67,7 +70,8 @@ void add_change_item_query(std::string name,            // name of product the c
  * update_change_item_query() creates an UPDATE TABLE query that edits a row in the change item table using 
  * the attributes provided as parameters.
 */
-void update_change_item_query(std::string name,            // name of product the change is for
+void update_change_item_query(std::string changeID,     // changeID (primary key) of change item we are updating
+                            std::string name,           // name of product the change is for
                             std::string description,    // description of the issue that needs to be changed
                             std::string release_date,   // anticipated release date
                             std::string state);         // state (known issue, in progress, complete)

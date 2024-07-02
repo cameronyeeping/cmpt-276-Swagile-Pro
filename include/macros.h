@@ -1,6 +1,6 @@
 #ifndef MACROS_H 
 #define MACROS_H
-// contains all macros used in the project
+// DO NOT SUBMIT THIS MODULE
 
 
 #endif 
