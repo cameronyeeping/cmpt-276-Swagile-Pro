@@ -10,3 +10,11 @@ static int callback(void *NotUsed, int argc, char **argv, char **azColName) {
    printf("\n");
    return 0;
 }
+
+void connect_db() {
+    std::cout << "Connected\n";
+}
+
+void disconnect_db() {
+    std::cout << "Disconnected\n";
+}
