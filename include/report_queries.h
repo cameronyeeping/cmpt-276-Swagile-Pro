@@ -1,3 +1,12 @@
+/*
+ * Module: Report Queries
+ * Revision History:
+ * Rev 1. 2024/07/01 Original by Cameron Yee-Ping
+ * ------------------------------------------------
+ * This module contains all queries involving the report table in swagile_pro.db
+ * The functions in this module assume that all function parameters have been checked for correctness.
+ * However, if an error occurs in any of these functions, they throw an error that can be caught by the caller.
+*/
 #ifndef CREATE_REPORT_QUERIES_H
 #define CREATE_REPORT_QUERIES_H
 
@@ -5,8 +14,10 @@
 #include <sqlite3.h>
 #include <string>
 
-
-// list of all change items not done or cancelled
+/*
+ * Report #1: : List of all change items for a particular product that are not done and not cancelled.  
+ * I.e. New/Reported, or Assessed, or InProgress.
+*/
 void display_report_1_query();
 
 /*
@@ -16,5 +27,6 @@ void display_report_1_query();
  * To word the report, select ProductRelease from list of releases for that product.  
  * Generate report of all requester and the email addresses of Requesters for that ChangeItem.
  */
-void display_report_2_query(std::string product);
+void display_report_2_query(std::string product // product that we are displaying information for
+                            );
 #endif
