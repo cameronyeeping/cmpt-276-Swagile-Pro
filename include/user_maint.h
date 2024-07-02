@@ -12,17 +12,24 @@
 #define USER_MAINT_H
 #include <string>
 
-// create_user() is used to create a new requester (e.g. 'Ananya') in swagile pro
+/*
+ * create_user() prompts for name, phone number, email, and optionally department. If department is left blank,
+ * it means that the user is external. After checking the input for validity, it creates a user with the corresponding
+ * attributes.
+*/
 void create_user();
 //===================================
 
-// update_user() is used to update an existing user (e.g. change of phone number) in swagile pro
+/*
+ * update_user() displays all users, and then prompts for a userID. After checking the userID, it prompts again for 
+ * name, phone number, email, and department. These inputs are used to update the corresponding user.
+*/
 void update_user();
 //===================================
 
-// display_user() is used to display exisiting users in the swagile pro system with their details
-void display_user();
-//===================================
-
+/*
+ * display_users() displays all users in the database.
+*/
+void display_users();
 
 #endif
