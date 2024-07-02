@@ -3,8 +3,6 @@
  * Rev 2. - 2024-07-02 Modified by Cameron Yee-Ping
  *        - Added Documentation
  *        - Removed create_product() function.
- *          - This function was unnecessary because a product should not be stored
- *            without its corresponding release.
  *        - Added update_product_release(), delete_product_release()
  * Rev 1. - 2024-07-01 Original by Ananya Singh
  * --------------------------------------------------
@@ -43,5 +41,35 @@ void update_product_release();
 void delete_product_release();
 //==============================
 
+/*
+ * display_product_releases() displays all product releases in the database.
+*/
+void display_product_releases();
+//==============================
+
+/*
+ * create_product() is used to create a new product (e.g. iPhone 15) in the product table.
+*/
+void create_product();
+//==============================
+
+/*
+ * update_product() is used to modify an existing product in the database. It first accepts a product name 
+ * and then its attributes, and modifies the corresponding product
+*/
+void update_product();
+//==============================
+
+/*
+ * delete_product() is used to delete an existing product in the database. It accepts a product name,
+ * then passes control to the product queries module for deletion.
+*/
+void delete_product();
+//==============================
+
+/*
+ * display_products() displays all products in the database.
+*/
+void display_products();
 
 #endif
