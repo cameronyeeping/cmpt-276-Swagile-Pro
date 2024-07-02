@@ -61,17 +61,40 @@ static int display_main_menu(){
     return selection;
 }
 
+static void change_request_menu() {
+    int selection = 0;
+    cout << "1) Create Change Request\n";
+    cout << "2) Update Change Request\n";
+    cout << "3) Delete Change Request\n";
+    cout << "4) Display Change Requests\n";
+    cin.ignore();
+    cin >> selection;
+    switch (selection) {
+    case 1:
+        cout << "Create change request placeholder\n";
+        break;
+    case 2:
+        cout << "Update Change Request placeholder\n";
+        break;
+    case 3:
+        cout << "Delete Change Request placeholder\n";
+        break;
+    case 4:
+        cout << "display change request placeholder\n";
+        break;
+    }
+}
 
 static void issue_menu() {
     int selection = 0;
-    cout << "1) Create Change Request\n";
+    cout << "1) Change Request Maintenance\n";
     cout << "2) Change Item Maintenance\n";
     cout << "0) Back\n";
     cin.ignore();
     cin >> selection;
     switch (selection) {
     case 1:
-        create_change_request();
+        change_request_menu();
         break;
     case 2:
         change_item_maintenance_menu();
@@ -111,6 +134,12 @@ static void product_menu(){
     int selection = 0;
     cout << "1) Create Product\n";
     cout << "2) Create Product Release\n";
+    cout << "3) Update Product\n";
+    cout << "4) Update Product Release\n";
+    cout << "5) Display Products\n";
+    cout << "6) Display Product Releases\n";
+    cout << "7) Delete Product\n";
+    cout << "8) Delete Product Releases\n";
     cout << "0) Back\n";
 
     cin >> selection; 
@@ -134,16 +163,21 @@ static void user_menu() {
     cout << "1) Create Employee\n";
     cout << "2) Edit Employee\n";
     cout << "3) Delete Employee\n";
-    cout << "4) Back\n";
+    cout << "0) Back\n";
     cout << "\nEnter selection: ";
 
     cin >> selection;
     switch (selection) {
     case 1: 
+        cout << "create employee placeholder\n";
         break;
     case 2: 
+        cout << "edit employee placeholder\n";
         break;
     case 3:
+        cout << "delete employee placeholder\n";
+        break;
+    case 0:
         break;
     }
     return;
@@ -154,14 +188,32 @@ static void change_item_maintenance_menu() {
     cout << "1) Query Change Item\n";
     cout << "2) Create Change Item\n";
     cout << "3) Update Change Item\n";
+    cout << "4) Delete Change Item\n";
+    cout << "5) Display Change Items\n";
     cout << "0) Back\n";
     int selection;
     cin >> selection;
 
     switch (selection) {
     case 1:
-        query_change_item();
+        //query_change_item();
+        cout << "query change item placeholder\n";
+        break;
     case 2: 
+        cout << "update change item placeholder\n";
+        break;
+    case 3:
+        cout << "update change item placeholder\n";
+        break;
+    case 4:
+        cout << "delete change item placeholder\n";
+        break;
+    case 5: 
+        cout << "display change items placeholder\n";
+    case 0:
+        break;
+    default:
+        cout << "invalid input\n";
     }
 
 }
