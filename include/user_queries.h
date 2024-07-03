@@ -11,6 +11,7 @@
 #define USER_QUERIES_H
 
 #include "../include/database_connection.h"
+#include "../include/query_results.h"
 
 #include <iostream>
 #include <sqlite3.h>
@@ -52,6 +53,15 @@ void delete_user_query(std::string userID);
  * display_users_query() displays all users that currently exist in the users table using a SELECT FROM query.
 */
 void display_users_query();
+
+//===================================
+
+/*
+ * constructs a query to search of a user by their first and last name, and returns it in a query results object
+*/
+Query_Results search_user_query(std::string first,    // first name of user we are looking for
+                        std::string last        // last name of user we are looking for
+                        );
 
 
 
