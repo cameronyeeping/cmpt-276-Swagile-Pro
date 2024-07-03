@@ -64,7 +64,9 @@ void display_change_request_query();
 void add_change_item_query(std::string name,            // name of product the change is for
                             std::string description,    // description of the issue that needs to be changed
                             std::string release_date,   // anticipated release date
-                            std::string state);         // state (known issue, in progress, complete)
+                            std::string state,         // state (known issue, in progress, complete)
+                            std::string severity        // severity of issue
+                            );
 //===========================================================
 /*
  * update_change_item_query() creates an UPDATE TABLE query that edits a row in the change item table using 
@@ -74,8 +76,9 @@ void update_change_item_query(std::string changeID,     // changeID (primary key
                             std::string name,           // name of product the change is for
                             std::string description,    // description of the issue that needs to be changed
                             std::string release_date,   // anticipated release date
-                            std::string state);         // state (known issue, in progress, complete)
-
+                            std::string state,           // state (known issue, in progress, complete)
+                            std::string severity        // severity of issue
+                        );
 //===========================================================
 /*
  * change_item_detail_query() searches the database for a row in the change item table with

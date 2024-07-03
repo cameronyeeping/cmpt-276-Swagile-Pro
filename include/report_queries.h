@@ -14,11 +14,13 @@
 #include <sqlite3.h>
 #include <string>
 
+#include "../include/query_results.h"
+
 /*
  * Report #1: : List of all change items for a particular product that are not done and not cancelled.  
  * I.e. New/Reported, or Assessed, or InProgress.
 */
-void display_report_1_query();
+void display_report_1_query(std::string product);
 
 /*
  * Report #2: List of customers/staff who need to be informed when a particular
@@ -27,6 +29,7 @@ void display_report_1_query();
  * To word the report, select ProductRelease from list of releases for that product.  
  * Generate report of all requester and the email addresses of Requesters for that ChangeItem.
  */
-void display_report_2_query(std::string product // product that we are displaying information for
+void display_report_2_query(std::string product, // product that we are displaying information for
+                                    std::string product_release // product release of the product
                             );
 #endif
