@@ -87,6 +87,6 @@ int main() {
         cout << "[PASS]\n";
     else 
         cout << "[FAIL]\n";
-
+    delete_user_query(results.getData()[0]); // delete user we added by userID
     return 0;
 }
