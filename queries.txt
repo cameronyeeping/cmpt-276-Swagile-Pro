@@ -62,4 +62,18 @@
 
 3. delete_change_item_query = 
     "DELETE FROM Change_Item
-    
+    WHERE change_id = ?;"
+
+4. display_change_items_query = 
+    "SELECT *
+    FROM Change_Item;"
+
+----------------------------------------------------------------------------------
+# REPORT QUERIES
+----------------------------------------------------------------------------------
+1. display_report_1_query = 
+    // 
+
+
+2. display_report_2_query = 
+    // 
