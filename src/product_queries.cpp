@@ -41,3 +41,18 @@ void update_product_release_query(string product_name, string release_id, string
     sqlite3_finalize(stmt);
 
 }
+
+void delete_product_release_query(string product_name)
+{
+    sqlite3_stmt* stmt;
+    int exit = sqlite3_prepare_v2(db, DELETE_PRODUCT_RELEASE_QUERY, -1, &stmt, nullptr);
+    sqlite3_bind_text(stmt, 1, product_name.c_str(), -1, SQLITE_STATIC);
+ 
+    exit = sqlite3_step(stmt);
+    if (exit != SQLITE_DONE) {
+        cerr << "Error executing statement: " << sqlite3_errmsg(db) << std::endl;
+        sqlite3_finalize(stmt);
+        return;
+    }
+    sqlite3_finalize(stmt);
+}
