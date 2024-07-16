@@ -2,6 +2,8 @@
 #include <string>
 #include "../include/issue_manag.h"
 #include "../include/issue_queries.h"
+#include "../include/user_queries.h"
+#include "../include/product_queries.h"
 using namespace std;
 
 void create_change_request() {
@@ -119,7 +121,7 @@ void create_change_request() {
                                  name,    
                                  date,   
                                  bug_release_id, 
-                                 completion 
+                                 completion,
                                  severity 
                                 );
         cout << "You have successfully created a new change request!\n";
