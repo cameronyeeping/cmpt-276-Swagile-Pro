@@ -1,0 +1,79 @@
+----------------------------------------------------------------------------------
+# USER QUERIES
+----------------------------------------------------------------------------------
+1. add_user_query =
+    "INSERT INTO Users (first_name, last_name, phone_number, email, department)
+    VALUES (?, ?, ?, ?, ?);"
+
+2. update_user_query =
+    "UPDATE Users
+    SET first_name = ?, last_name = ?, phone_number = ?, email = ?, department = ? 
+    WHERE userID = ?;"
+
+3. delete_user_query =
+    "DELETE FROM Users
+    WHERE userID = ?;"
+
+4. display_users_query =
+    "SELECT * 
+    FROM Users" 
+
+5. search_user_query = 
+    "SELECT *
+    FROM Users
+    WHERE first_name = ?
+    AND last_name = ?;"
+
+----------------------------------------------------------------------------------
+# PRODUCT QUERIES
+----------------------------------------------------------------------------------
+1. add_product_release_query = 
+    "INSERT INTO Product_Release (product_name, release_id, release_date)
+    VALUES (?, ?, ?);"
+
+2. update_product_release_query =
+    "UPDATE Product_Release
+    SET product_name = ?, release_id = ?, release_date = ?
+    WHERE product_name = ?, release_id = ?;"
+
+3. delete_product_release_query =
+    "DELETE FROM Product_Release
+    WHERE product_name = ?;"
+
+4. display_product_query = 
+    "SELECT product_name
+    FROM Product_Release
+
+5. display_product_release_query = 
+     "SELECT *
+    FROM Product_Release;"
+
+----------------------------------------------------------------------------------
+# ISSUE QUERIES
+----------------------------------------------------------------------------------
+1.  add_change_item_query = 
+    "INSERT INTO Change_Item (change_id, product_name, future_release, description)
+    VALUES (?, ?, ?, ?);"
+
+2. update_change_item_query = 
+    "UPDATE Change_Item
+    SET product_name = ?, future_release = ?, description = ?
+    WHERE change_id = ?;"
+
+3. delete_change_item_query = 
+    "DELETE FROM Change_Item
+    WHERE change_id = ?;"
+
+4. display_change_items_query = 
+    "SELECT *
+    FROM Change_Item;"
+
+----------------------------------------------------------------------------------
+# REPORT QUERIES
+----------------------------------------------------------------------------------
+1. display_report_1_query = 
+    // 
+
+
+2. display_report_2_query = 
+    // 
