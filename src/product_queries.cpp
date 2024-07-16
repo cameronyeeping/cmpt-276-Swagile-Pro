@@ -56,3 +56,27 @@ void delete_product_release_query(string product_name)
     }
     sqlite3_finalize(stmt);
 }
+
+void display_product_query()
+{
+    headers_printed = false;
+    char* errMsg = nullptr;
+
+    int exit = sqlite3_exec(db, DISPLAY_PRODUCT_QUERY, callback, 0, &errMsg);
+    if (exit != SQLITE_OK) {
+        cerr << "Error executing SELECT statement: " << errMsg << std::endl;
+        sqlite3_free(errMsg);
+    }
+}
+
+void display_product_release_query()
+{
+    headers_printed = false;
+    char* errMsg = nullptr;
+
+    int exit = sqlite3_exec(db, DISPLAY_PRODUCT_RELEASE_QUERY, callback, 0, &errMsg);
+    if (exit != SQLITE_OK) {
+        cerr << "Error executing SELECT statement: " << errMsg << std::endl;
+        sqlite3_free(errMsg);
+    }
+}
