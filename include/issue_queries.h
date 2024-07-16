@@ -66,11 +66,10 @@ void display_change_request_query();
  * add_change_item_query() creates an INSERT INTO query that adds a new row into the change item table
  * using the attributes provided as parameters.
 */
-void add_change_item_query(std::string name,            // name of product the change is for
-                            std::string description,    // description of the issue that needs to be changed
-                            std::string release_date,   // anticipated release date
-                            std::string state,         // state (known issue, in progress, complete)
-                            std::string severity        // severity of issue
+void add_change_item_query(std::string change_id,        // change_id for the change item
+                            std::string product_name,    // the product name for the issue
+                            std::string future_release,  // anticipated release date
+                            std::string description      // description of the issue that needs to be changed
                             );
 //===========================================================
 /*
