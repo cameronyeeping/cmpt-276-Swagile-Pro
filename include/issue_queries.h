@@ -35,12 +35,16 @@ void add_change_request_query(std::string change_id,   // user ID of the individ
 
 /*
  * update_change_request_query() creates an UPDATE TABLE query that edits a row in the change request table
+ * this allows the user to update any number of fields expect the change_id (primary key)
 */
 void update_change_request_query(
-                                std::string userID,    // user ID of the individual that submitted the change request
-                                std::string name, // name of Product that the the change request is for
-                                std::string fixed_releaseID, // anticipated release ID
-                                std::string completion // completion state
+                                std::string change_id, // change id to be updated
+                                std::string user_id,    // user ID of the individual that submitted the change request
+                                std::string product_name, // name of Product that the the change request is for
+                                std::string bug_release_id, // release ID where the bug was found
+                                std::string report_date, // date the bug was reported
+                                std::string completion_state, // the state of completion
+                                std::string severity // the severity of the issue
                                 );
 //===========================================================
 
