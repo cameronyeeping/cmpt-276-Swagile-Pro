@@ -40,3 +40,39 @@ void display_report_1_query(const string& product) {
 
     sqlite3_finalize(stmt);
 }
+
+void display_report_2_query(string product, string product_release)
+{
+    char* errMsg = nullptr;
+    sqlite3_stmt* stmt;
+
+    int exit = sqlite3_prepare_v2(db, CREATE_REPORT_2, -1, &stmt, nullptr); // prepare statement for binding text
+    if (exit != SQLITE_OK) {
+        cerr << "Error preparing SELECT statement: " << sqlite3_errmsg(db) << endl;
+        return;
+    }
+
+    exit = sqlite3_bind_text(stmt, 1, product.c_str(), -1, SQLITE_STATIC); // bind text to query
+    exit = sqlite3_bind_text(stmt, 2, product_release.c_str(), -1, SQLITE_STATIC);
+
+    if (exit != SQLITE_OK) {
+        cerr << "Error binding parameter: " << sqlite3_errmsg(db) << endl;
+        sqlite3_finalize(stmt);
+        return;
+    }
+    cout << setw(20) << "User ID" << setw(20) << "First Name" << setw(20) << "Last Name" << endl;
+
+    cout << endl << "===========================================================================================================\n";
+    while ((exit = sqlite3_step(stmt)) == SQLITE_ROW) { // iterate until no rows remaining
+
+        cout << setw(20) << sqlite3_column_text(stmt, 0) << setw(20)
+            << sqlite3_column_text(stmt, 1) << setw(20)
+            << sqlite3_column_text(stmt, 2) << endl;
+    }
+
+    if (exit != SQLITE_DONE) {
+        cerr << "Error executing SELECT statement: " << sqlite3_errmsg(db) << endl;
+    }
+
+    sqlite3_finalize(stmt);
+}
