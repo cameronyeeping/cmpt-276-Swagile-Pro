@@ -114,5 +114,9 @@
 #define DISPLAY_CHANGE_REQUEST_QUERY \
         "SELECT * " \
         "FROM Change_Request;"
-        
+
+#define CHANGE_ITEM_DETAIL_QUERY \
+        "SELECT *  \
+        FROM Change_Item \
+        WHERE change_id = ?;"
 #endif 
