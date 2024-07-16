@@ -7,8 +7,8 @@
  * The functions in this module assume that all function parameters have been checked for correctness.
  * However, if an error occurs in any of these functions, they throw an error that can be caught by the caller.
 */
-#ifndef CREATE_REPORT_QUERIES_H
-#define CREATE_REPORT_QUERIES_H
+#ifndef REPORT_QUERIES_H
+#define REPORT_QUERIES_H
 
 #include <iostream>
 #include <sqlite3.h>

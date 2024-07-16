@@ -2,14 +2,13 @@
 
 using namespace std;
 int callback(void* data, int argc, char** argv, char** azColName) { 
-    static bool headersPrinted = false;  // To print headers only once
 
-    if (!headersPrinted) {
+    if (!headers_printed) {
         for (int i = 0; i < argc; i++) {
             cout << setw(20) << azColName[i]; // Adjust column width as needed
         }
         cout << endl << "===========================================================================================================\n";
-        headersPrinted = true;
+        headers_printed = true;
     }
 
     for (int i = 0; i < argc; i++) {

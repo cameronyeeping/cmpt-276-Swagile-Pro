@@ -95,4 +95,13 @@
 #define DISPLAY_CHANGE_ITEMS_QUERY \
     "SELECT * " \
     "FROM Change_Item;"
+#define CREATE_REPORT_1 "SELECT CR.change_id, CR.completion_state, CR.severity, CI.description \
+    FROM Change_Request CR \
+    JOIN Change_Item CI ON CR.change_id = CI.change_id \
+    WHERE NOT (CR.completion_state = 'Completed'); \
+    AND CR.prduct_name = ?;"
+#define CREATE_REPORT_2 "SELECT DISTINCT Users.user_id, Users.first_name, Users.last_name FROM Users \
+    JOIN Change_Request ON Users.user_id = Change_Request.user_id \
+    WHERE Change_Request.product_name = ?\
+    AND Change_Request.bug_release_id = ?;"
 #endif 
