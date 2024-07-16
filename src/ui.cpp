@@ -11,6 +11,7 @@
 #include "../include/issue_manag.h"
 #include "../include/macros.h"
 #include "../include/product_maint.h"
+#include "../include/user_maint.h"
 
 using namespace std;
 
