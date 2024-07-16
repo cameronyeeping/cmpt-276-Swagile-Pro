@@ -110,4 +110,9 @@
 
 #define DELETE_CHANGE_REQUEST_QUERY "DELETE FROM Change_Request \
         WHERE change_id = ?;"
+
+#define DISPLAY_CHANGE_REQUEST_QUERY \
+        "SELECT * " \
+        "FROM Change_Request;"
+        
 #endif 
