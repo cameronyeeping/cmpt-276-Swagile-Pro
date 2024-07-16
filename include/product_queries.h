@@ -24,7 +24,7 @@
  * add_product_release_query() creates an INSERT INTO query that adds a row into the product table in swagile_pro.db 
  * using the parameters provided.
 */
-void add_product_release_query(std::string name,            // name of the product
+void add_product_release_query(std::string product_name,            // name of the product
                         std::string release_id,     // release ID of the product
                         std::string release_date    // next anticipated release date of product
                         );
@@ -34,7 +34,7 @@ void add_product_release_query(std::string name,            // name of the produ
  * update_product_query() creates an UPDATE TABLE query that changes a product's attributes 
  * to the ones provided as parameters.
 */
-void update_product_release_query(std::string name,            // name of the product
+void update_product_release_query(std::string product_name,            // name of the product
                         std::string release_id,     // release ID of the product
                         std::string release_date    // next anticipated release date of product
                         );
@@ -43,7 +43,7 @@ void update_product_release_query(std::string name,            // name of the pr
 /*
  * delete_product_query() deletes a given product from the product table using a DELETE FROM query.
 */
-void delete_product_release_query(std::string name  // name of product to be deleted.
+void delete_product_release_query(std::string product_name  // name of product to be deleted.
                         );
 //===================================
 

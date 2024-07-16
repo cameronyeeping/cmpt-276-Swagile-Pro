@@ -72,8 +72,11 @@
 
 #define UPDATE_PRODUCT_RELEASE_QUERY "UPDATE Product_Release \
     SET product_name = ?, release_id = ?, release_date = ? \
-    WHERE product_name = ?, release_id = ?;"
+    WHERE product_name = ? AND release_id = ?;"
 
+#define DELETE_PRODUCT_RELEASE_QUERY "DELETE FROM Product_Release \
+    WHERE product_name = ?;"
+    
 #define DISPLAY_PRODUCT_QUERY "SELECT DISTINCT product_name FROM Product_Release;"
 
 #define DISPLAY_PRODUCT_RELEASE_QUERY "SELECT * \
