@@ -120,3 +120,18 @@ void change_item_detail_query(string change_id) {
         cerr << "Error preparing statement: " << sqlite3_errmsg(db) << endl;
     }
 }
+
+void delete_change_item_query(string change_id)
+{
+    sqlite3_stmt* stmt;
+    int exit = sqlite3_prepare_v2(db, DELETE_CHANGE_ITEM_QUERY, -1, &stmt, nullptr);
+    sqlite3_bind_text(stmt, 1, change_id.c_str(), -1, SQLITE_STATIC);
+ 
+    exit = sqlite3_step(stmt);
+    if (exit != SQLITE_DONE) {
+        cerr << "Error executing statement: " << sqlite3_errmsg(db) << std::endl;
+        sqlite3_finalize(stmt);
+        return;
+    }
+    sqlite3_finalize(stmt);
+}

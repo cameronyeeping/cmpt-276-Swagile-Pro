@@ -93,7 +93,7 @@ void change_item_detail_query(std::string change_id // changeID of the change it
 /*
  * delete_change_item_query() deletes the row with a matching changeID from the database.
 */
-void delete_change_item_query(std::string changeID // changeID of the change item we want to delete
+void delete_change_item_query(std::string change_id // changeID of the change item we want to delete
                             );
 //===========================================================
 
