@@ -135,3 +135,15 @@ void delete_change_item_query(string change_id)
     }
     sqlite3_finalize(stmt);
 }
+
+void display_change_items_query()
+{
+    headers_printed = false;
+    char* errMsg = nullptr;
+
+    int exit = sqlite3_exec(db, DISPLAY_CHANGE_ITEMS_QUERY, callback, 0, &errMsg);
+    if (exit != SQLITE_OK) {
+        cerr << "Error executing SELECT statement: " << errMsg << std::endl;
+        sqlite3_free(errMsg);
+    }
+}
