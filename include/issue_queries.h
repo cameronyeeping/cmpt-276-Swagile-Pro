@@ -86,7 +86,7 @@ void update_change_item_query(std::string change_id,     // change_id (primary k
  * change_item_detail_query() searches the database for a row in the change item table with
  * the same changeID. Since changeID is unique, it will never return more than one row.
 */
-void change_item_detail_query(std::string changeID // changeID of the change item we are looking for
+void change_item_detail_query(std::string change_id // changeID of the change item we are looking for
                             );
 //===========================================================
 

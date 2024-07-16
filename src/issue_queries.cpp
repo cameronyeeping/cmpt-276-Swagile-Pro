@@ -97,3 +97,26 @@ void update_change_item_query(string change_id, string product_name, string futu
     }
     sqlite3_finalize(stmt);
 }
+
+void change_item_detail_query(string change_id) {
+    sqlite3_stmt* stmt;
+    int exit = sqlite3_prepare_v2(db, CHANGE_ITEM_DETAIL_QUERY, -1, &stmt, nullptr);
+
+    if (exit == SQLITE_OK) {
+        sqlite3_bind_text(stmt, 1, change_id.c_str(), -1, SQLITE_STATIC);
+
+        exit = sqlite3_step(stmt);
+        if (exit == SQLITE_ROW) {
+            cout << sqlite3_column_text(stmt, 0) << "\t"
+                 << sqlite3_column_text(stmt, 1) << "\t"
+                 << sqlite3_column_text(stmt, 2) << "\t"
+                 << sqlite3_column_text(stmt, 3) << endl;
+        } else {
+            cerr << "No row found." << endl;
+        }
+
+        sqlite3_finalize(stmt);
+    } else {
+        cerr << "Error preparing statement: " << sqlite3_errmsg(db) << endl;
+    }
+}
