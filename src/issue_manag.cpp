@@ -91,7 +91,7 @@ void create_change_request() {
         cout << "Please Enter the Severity Level of the Issue:\n";
         cout << "Required Format: Number between 1-4\n";
         cin >> severity;
-        if (department.length() == 1) {
+        if (severity.length() == 1 && severity[0] <= '4' && severity[0] >= '1') {
             break;
         } else {
             cout << "Severity Level must be in correct format!\n";
@@ -106,21 +106,22 @@ void create_change_request() {
 
     string confirm_input;
 
-    cout << "User First Name: " << first_name << "\n";
-    cout << "User Last Name: " << last_name << "\n";
-    cout << "User Phone Number: " << phone_number << "\n";
-    cout << "User Email: " << email << "\n";
-    cout << "User Department: " << department << "\n";
-    cout << "Do you want to add this user? (Y/N)\n";
+    cout << "UserID: " << user_id << "\n";
+    cout << "Product Name: " << name << "\n";
+    cout << "Current Date: " << date << "\n";
+    cout << "ReleaseID: " << bug_release_id << "\n";
+    cout << "Severity Level: " << severity << "\n";
+    cout << "Do you want to add this change request? (Y/N)\n";
     cin >> confirm_input;
 
     if (confirm_input == "Y" || "y"){
-        add_user_query (first_name,     // first name of the user
-                    last_name,      // last name of the user
-                    phone_number,   // phone number of the user
-                    email,          // employee of the user
-                    department      // department that the user works in
-                    );
+        add_change_request_query(user_id, 
+                                 name,    
+                                 date,   
+                                 bug_release_id, 
+                                 completion 
+                                 severity 
+                                );
         cout << "You have successfully created a new user!\n";
         cout << "You have been re-directed to the Main Menu!\n";
     } else {
