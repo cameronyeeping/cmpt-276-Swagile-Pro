@@ -76,12 +76,10 @@ void add_change_item_query(std::string change_id,        // change_id for the ch
  * update_change_item_query() creates an UPDATE TABLE query that edits a row in the change item table using 
  * the attributes provided as parameters.
 */
-void update_change_item_query(std::string changeID,     // changeID (primary key) of change item we are updating
-                            std::string name,           // name of product the change is for
-                            std::string description,    // description of the issue that needs to be changed
-                            std::string release_date,   // anticipated release date
-                            std::string state,           // state (known issue, in progress, complete)
-                            std::string severity        // severity of issue
+void update_change_item_query(std::string change_id,     // change_id (primary key) of change item we are updating
+                            std::string product_name,    // name of product the change is for
+                            std::string future_release,  // anticipated release date
+                            std::string description     // description of the issue that needs to be changed
                         );
 //===========================================================
 /*

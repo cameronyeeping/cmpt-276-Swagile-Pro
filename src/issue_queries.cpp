@@ -78,3 +78,22 @@ void add_change_item_query(string change_id, string product_name, string future_
     }
     sqlite3_finalize(stmt);
 }
+
+void update_change_item_query(string change_id, string product_name, string future_release, string description)
+{
+    sqlite3_stmt* stmt;
+    int exit = sqlite3_prepare_v2(db, UPDATE_CHANGE_ITEM_QUERY, -1, &stmt, nullptr);
+
+    sqlite3_bind_text(stmt, 1, product_name.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 2, future_release.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 3, description.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 4, change_id.c_str(), -1, SQLITE_STATIC);
+
+    exit = sqlite3_step(stmt);
+    if (exit != SQLITE_DONE) {
+        cerr << "Error executing statement: " << sqlite3_errmsg(db) << std::endl;
+        sqlite3_finalize(stmt);
+        return;
+    }
+    sqlite3_finalize(stmt);
+}
