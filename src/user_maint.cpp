@@ -251,7 +251,7 @@ void update_user() {
     cout << "Do you want to confirm the updated user? (Y/N)\n";
     cin >> confirm_input;
 
-    if (confirm_input == "Y" || "y"){
+    if (confirm_input == "Y" || confirm_input == "y"){
         update_user_query (user_id,     // userID of the user
                         first_name,     // first name of the user
                         last_name,      // last name of the user

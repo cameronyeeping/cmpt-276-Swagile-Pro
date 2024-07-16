@@ -89,7 +89,7 @@ void create_product_release() {
     cout << "Do you want to add this product? (Y/N)\n";
     cin >> confirm_input;
 
-    if (confirm_input == "Y" || "y"){
+    if (confirm_input == "Y" || confirm_input == "y"){
         add_product_release_query(name,           // name of the product
                                   release_id,     // release ID of the product
                                   release_date    // next anticipated release date of product
@@ -213,7 +213,7 @@ void update_product_release() {
     cout << "Do you want to confirm the updated product release? (Y/N)\n";
     cin >> confirm_input;
 
-    if (confirm_input == "Y" || "y"){
+    if (confirm_input == "Y" || confirm_input == "y"){
         update_product_release_query(name,            // name of the product
                                      release_id,     // release ID of the product
                                      release_date    // next anticipated release date of product
