@@ -23,12 +23,13 @@
  * a row in the change request table. Note: the releaseID (primary key) is 
  * automatically generated
 */
-void add_change_request_query(std::string userID,   // user ID of the individual that submitted the change request
-                            std::string name,       // name of Product that the the change request is for
-                            std::string date,       // date of report
-                            std::string releaseID,  // release id of the product with the bug
-                            std::string fixed_releaseID, // anticipated release ID
-                            std::string completion  // completion state
+void add_change_request_query(std::string change_id,   // user ID of the individual that submitted the change request
+                            std::string user_id,       // name of Product that the the change request is for
+                            std::string product_name,       // date of report
+                            std::string bug_release_id,  // release id of the product with the bug
+                            std::string report_date, // anticipated release ID
+                            std::string completion_state,  // completion state
+                            std::string severity           // the severity of the issue
                             );
 //===========================================================
 
