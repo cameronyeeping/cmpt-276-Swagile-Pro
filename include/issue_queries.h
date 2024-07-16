@@ -52,7 +52,7 @@ void update_change_request_query(
  * delete_change_request_query() creates a DELETE FROM query that deletes a row in the change request table based on the 
  * changeID (primary key) of the row. 
 */
-void delete_change_request_query(std::string changeID   // primary key of the change request table
+void delete_change_request_query(std::string change_id  // primary key of the change request table
                                 );
 //===========================================================
 

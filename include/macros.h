@@ -107,4 +107,7 @@
         "UPDATE Change_Request \
         SET user_id = ?, product_name = ?, bug_release_id = ?, report_date = ?, completion_state = ?, severity = ? \
         WHERE change_id = ?;"
+
+#define DELETE_CHANGE_REQUEST_QUERY "DELETE FROM Change_Request \
+        WHERE change_id = ?;"
 #endif 
