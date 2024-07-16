@@ -62,6 +62,6 @@ void display_product_query();
 */
 void display_product_release_query();
 
-
+bool search_product_query(std::string name, std::string release_id);
 
 #endif 

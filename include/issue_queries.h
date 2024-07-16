@@ -13,7 +13,6 @@
 #define ISSUE_QUERIES_H
 
 #include "../include/database_connection.h"
-
 #include <iostream>
 #include <string>
 #include <sqlite3.h>
@@ -102,9 +101,7 @@ void delete_change_item_query(std::string change_id // changeID of the change it
 */
 void display_change_items_query();
 
-
-
-
+bool search_change_id_query(std::string change_id);
 
 
 #endif

@@ -147,3 +147,21 @@ void display_change_items_query()
         sqlite3_free(errMsg);
     }
 }
+
+bool search_change_id_query(string change_id) {
+    bool exists = false;
+    sqlite3_stmt* stmt;
+    int exit = sqlite3_prepare_v2(db, GET_CHANGE_ID_QUERY, -1, &stmt, nullptr);
+    if(exit != SQLITE_OK) {
+        cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << endl;
+        return false;
+    }
+    sqlite3_bind_text(stmt, 1, change_id.c_str(), -1, SQLITE_STATIC);
+
+    exit = sqlite3_step(stmt);
+    
+    if (exit == SQLITE_ROW) {
+        exists = true;
+    }
+    return exists;
+}

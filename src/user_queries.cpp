@@ -107,7 +107,6 @@ Query_Results search_user_query(string first, string last) {
     return result;
 }
 
-// ! UNTESTED
 bool search_user_id_query(string user_id) {
     sqlite3_stmt* stmt;
     int exit = sqlite3_prepare_v2(db, GET_USER_ID_QUERY, -1, &stmt, nullptr);
@@ -120,7 +119,7 @@ bool search_user_id_query(string user_id) {
 
     bool exists = false;
     if (exit == SQLITE_ROW) {
-        exists = sqlite3_column_int(stmt, 0) > 0;
+        exists = true;
     }
 
     sqlite3_finalize(stmt);

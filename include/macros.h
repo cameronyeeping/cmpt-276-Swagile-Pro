@@ -33,6 +33,7 @@
     FOREIGN KEY (product_name, bug_release_id) REFERENCES Product_Release (product_name, release_id) \
         ON DELETE CASCADE \
         ON UPDATE CASCADE);"
+#define GET_CHANGE_ID_QUERY "SELECT * FROM Change_Request WHERE change_id = ?"
 
 #define CREATE_CHANGE_ITEM_TABLE "CREATE TABLE IF NOT EXISTS Change_Item ( \
     change_id INTEGER, \
@@ -82,6 +83,9 @@
 #define DISPLAY_PRODUCT_RELEASE_QUERY "SELECT * \
     FROM Product_Release;"
 
+#define GET_PRODUCT_QUERY "SELECT * FROM Product_Release \
+    WHERE \
+        product_name = ? AND release_id = ?"
 #define ADD_CHANGE_ITEM_QUERY \
     "INSERT INTO Change_Item (change_id, product_name, future_release, description) " \
     "VALUES (?, ?, ?, ?);"

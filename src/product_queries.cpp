@@ -80,3 +80,23 @@ void display_product_release_query()
         sqlite3_free(errMsg);
     }
 }
+
+bool search_product_query(string name, string release_id) {
+    sqlite3_stmt* stmt;
+    int exit = sqlite3_prepare_v2(db, GET_PRODUCT_QUERY, -1, &stmt, nullptr);
+    if (exit != SQLITE_OK) {
+        cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << endl;
+        return false;
+    }
+    sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_text(stmt, 2,release_id.c_str(), -1, SQLITE_STATIC);
+    exit = sqlite3_step(stmt);
+
+    bool exists = false;
+    if (exit == SQLITE_ROW) {
+        exists = true;
+    }
+
+    sqlite3_finalize(stmt);
+    return exists;
+}
