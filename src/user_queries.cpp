@@ -98,7 +98,7 @@ Query_Results search_user_query(string first, string last) {
     }
 
     if (rc != SQLITE_DONE && rc != SQLITE_ROW) {
-        std::cerr << "Execution finished with an error: " << sqlite3_errmsg(db) << std::endl;
+        cerr << "Execution finished with an error: " << sqlite3_errmsg(db) << std::endl;
     }
 
     sqlite3_finalize(stmt);

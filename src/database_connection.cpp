@@ -18,10 +18,18 @@ int callback(void* data, int argc, char** argv, char** azColName) {
     return 0;
 }
 
-void connect_db() {
-    cout << "Connected\n";
+int connect_db() {
+    int exit = sqlite3_open("swagile_pro.db", &db);
+    if(exit) {
+        cerr << "Error opening database: " << sqlite3_errmsg(db) << endl;
+        return 1;
+    }
+    return 0;
 }
 
-void disconnect_db() {
-    cout << "Disconnected\n";
+int disconnect_db() {
+    int exit = sqlite3_close(db);
+    if(exit != SQLITE_OK) {
+        cerr << "Error";
+    }
 }
