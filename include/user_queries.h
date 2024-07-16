@@ -63,6 +63,11 @@ Query_Results search_user_query(std::string first,    // first name of user we a
                         std::string last        // last name of user we are looking for
                         );
 
+/*
+ * Takes a user_id and checks if the user exists in the table, returns a bool
+*/
+bool search_user_id_query(std::string user_id // take a user id and check to see if it's in the table
+                        );
 
 
 #endif
