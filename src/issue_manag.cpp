@@ -1,3 +1,11 @@
+/*
+ 
+Module: User Maintenance
+Rev 1. - 2024-07-15 Original by Dylan Dang
+--------------------------------------------------
+This module contains the implementations of the exported functions outlined in "issue_manag.h"
+*/
+
 #include <iostream>
 #include <string>
 #include "../include/issue_manag.h"
@@ -6,6 +14,12 @@
 #include "../include/product_queries.h"
 using namespace std;
 
+
+/*
+create_change_request() polls for user_ID, name, date, bug_release_id, completion state and severity.
+It checks the inputs for validity, and then passes control to the issue queries module to create a new change
+request.
+*/
 void create_change_request() {
     string user_id;
     string name; 
@@ -40,7 +54,7 @@ void create_change_request() {
         cout << "Format: #.#.# \n";
         cin >> bug_release_id;
 
-        if (search_product_query(name, bug_release_id) == true) {  // if product found IMPLEMENT
+        if (search_product_query(name, bug_release_id) == true) {
             break;
         } else {
             cout << "Enter valid product name and releaseID!\n";
@@ -136,6 +150,12 @@ void create_change_request() {
     return;
 }
 
+/*
+query change item first displays all change items concisely, and then polls for user input. 
+The user input MUST be a valid changeID. After checking for validity, it hands control to the issue
+queries module.
+This function is used to display a detailed description of a specific change item
+*/
 void query_change_item() {
     string change_id;
 
@@ -160,7 +180,11 @@ void query_change_item() {
     return;
 }
 
-
+/*
+create_change_item polls for change_id, product_name and anticipated release date.
+After checking for validity, it passes control to the issue queries module to create a change item with the
+given inputs.
+*/
 void create_change_item() {
     string change_id; 
     string product_name;
