@@ -27,13 +27,13 @@ bool headers_printed = false; // used for formatting output
  * the database does not exist, it creates a new one and creates all of the necessary tables.
  * If the api fails to connect to the database, it will throw an error which will be caught by the main module.
 */
-void connect_db();
+int connect_db();
 
 /*
  * disconnect_db() calls the sqlite3 api to close the connection to swagile_pro.db. If
  * the api fails to disconnect, it will throw an error that will be caught by the main module.
 */
-void disconnect_db();
+int disconnect_db();
 
 /*
  * callback controls output for select queries

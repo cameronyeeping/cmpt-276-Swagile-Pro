@@ -23,19 +23,11 @@
 #include "../include/database_connection.h"
 
 int main() {
-    // TODO: custom exception class
-    try {
-        connect_db();
-    } catch (std::exception e) {
-        std::cerr << e.what() << std::endl;
-    }
-
+    if(connect_db())
+        return 1;
     start_ui();
 
-    try {
-        disconnect_db();
-    } catch (std::exception e) {
-        std::cerr << e.what() << std::endl;
-    }
+    if (disconnect_db()) 
+        return 1;
     return 0;
 }
