@@ -102,4 +102,9 @@
 #define ADD_CHANGE_REQUEST_QUERY \
         "INSERT INTO Change_Request \
         VALUES (?, ?, ?, ?, ?, ?, ?)"
+
+#define UPDATE_CHANGE_REQUEST_QUERY \
+        "UPDATE Change_Request \
+        SET user_id = ?, product_name = ?, bug_release_id = ?, report_date = ?, completion_state = ?, severity = ? \
+        WHERE change_id = ?;"
 #endif 
