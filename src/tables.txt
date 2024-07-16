@@ -1,0 +1,119 @@
+pragma foreign_keys = ON
+
+CREATE TABLE IF NOT EXISTS Users (
+    user_id INTEGER PRIMARY KEY,
+    first_name char(30) NOT NULL,
+    last_name char(30) NOT NULL,
+    email char(50) NOT NULL,
+    department char(50)
+);
+
+CREATE TABLE IF NOT EXISTS Product_Release (
+    product_name char(30),
+    release_id char(30),
+    release_date DATE,
+    PRIMARY KEY (product_name, release_id)
+);
+
+CREATE TABLE IF NOT EXISTS Change_Request (
+    change_id INTEGER PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    product_name char(30) NOT NULL, 
+    bug_release_id char(30) NOT NULL,
+    report_date DATE NOT NULL,
+    completion_state char(30),
+    severity char(30) NOT NULL, 
+    FOREIGN KEY (user_id) 
+        REFERENCES Users (user_id)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE,
+    FOREIGN KEY (product_name, bug_release_id)
+        REFERENCES Product_Release (product_name, release_id)
+            ON DELETE CASCADE 
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS Change_Item (
+    change_id INTEGER, 
+    product_name char(30), 
+    future_release char(30),
+    description char(1000),
+    FOREIGN KEY (change_id)
+        REFERENCES Change_Request (change_id)
+            ON DELETE CASCADE 
+            ON UPDATE CASCADE, 
+    FOREIGN KEY (product_name, future_release) 
+        REFERENCES Product_Release (product_name, release_id)
+            ON DELETE CASCADE 
+            ON UPDATE CASCADE
+);
+
+INSERT INTO Users (first_name, last_name, email, department) VALUES ("Cameron", "Yee-Ping", "cly7@sfu.ca", "Engineering");
+UPDATE Users 
+    SET user_id = 301439665 
+    WHERE 
+        user_id = 1;
+INSERT INTO Product_Release (product_name, release_id, release_date) VALUES ("iPhone 15 Pro", "1.0.0", "2024-07-15");
+INSERT INTO Product_Release (product_name, release_id, release_date) VALUES ("iPhone 15 Pro", "1.0.1", "2024-07-15");
+INSERT INTO Change_Request (user_id, product_name, report_date, bug_release_id, fixed_release_id, completion_state) 
+    VALUES (1, "iPhone 15 Pro", "2024-07-15", "1.0.0", "1.0.1", "Acknowledged");
+    pragma foreign_keys = ON
+
+CREATE TABLE IF NOT EXISTS Users (
+    user_id INTEGER PRIMARY KEY,
+    first_name char(30) NOT NULL,
+    last_name char(30) NOT NULL,
+    email char(50) NOT NULL,
+    department char(50)
+);
+
+CREATE TABLE IF NOT EXISTS Product_Release (
+    product_name char(30),
+    release_id char(30),
+    release_date DATE,
+    PRIMARY KEY (product_name, release_id)
+);
+
+CREATE TABLE IF NOT EXISTS Change_Request (
+    change_id INTEGER PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    product_name char(30) NOT NULL, 
+    bug_release_id char(30) NOT NULL,
+    report_date DATE NOT NULL,
+    completion_state char(30),
+    severity char(30) NOT NULL, 
+    FOREIGN KEY (user_id) 
+        REFERENCES Users (user_id)
+            ON DELETE CASCADE
+            ON UPDATE CASCADE,
+    FOREIGN KEY (product_name, bug_release_id)
+        REFERENCES Product_Release (product_name, release_id)
+            ON DELETE CASCADE 
+            ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS Change_Item (
+    change_id INTEGER, 
+    product_name char(30), 
+    future_release char(30),
+    description char(1000),
+    FOREIGN KEY (change_id)
+        REFERENCES Change_Request (change_id)
+            ON DELETE CASCADE 
+            ON UPDATE CASCADE, 
+    FOREIGN KEY (product_name, future_release) 
+        REFERENCES Product_Release (product_name, release_id)
+            ON DELETE CASCADE 
+            ON UPDATE CASCADE
+);
+
+INSERT INTO Users (first_name, last_name, email, department) VALUES ("Cameron", "Yee-Ping", "cly7@sfu.ca", "Engineering");
+UPDATE Users 
+    SET user_id = 301439665 
+    WHERE 
+        user_id = 1;
+INSERT INTO Product_Release (product_name, release_id, release_date) VALUES ("iPhone 15 Pro", "1.0.0", "2024-07-15");
+INSERT INTO Product_Release (product_name, release_id, release_date) VALUES ("iPhone 15 Pro", "1.0.1", "2024-07-15");
+INSERT INTO Change_Request (user_id, product_name, report_date, bug_release_id, fixed_release_id, completion_state) 
+    VALUES (1, "iPhone 15 Pro", "2024-07-15", "1.0.0", "1.0.1", "Acknowledged");
+    

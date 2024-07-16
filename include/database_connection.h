@@ -1,6 +1,10 @@
 /*
  * Module: Database connection
  * Revision History:
+ * Rev. 2 2024/07/15 Modified by Cameron Yee-Ping
+ *                   - Added global db pointer
+ *                   - Added global headers_printed flag
+ *                   - Added callback function for SELECT queries.
  * Rev. 1 2024/07/01 Original by Cameron Yee-Ping
  * ------------------------------------------------
  * This module contains handles connection and disconnection to and from the 
@@ -11,8 +15,13 @@
 #define DATABASE_CONNECTION_H
 
 #include <sqlite3.h>
+#include <iomanip>
+#include <string>
+#include <iostream>
+using namespace std;
 
-
+sqlite3* db; // global pointer
+bool headers_printed = false; // used for formatting output
 /*
  * connect_db() calls the sqlite3 api to connect to swagile_pro.db. If 
  * the database does not exist, it creates a new one and creates all of the necessary tables.
@@ -26,5 +35,9 @@ void connect_db();
 */
 void disconnect_db();
 
+/*
+ * callback controls output for select queries
+*/
+int callback(void *NotUsed, int argc, char **argv, char **azColName);
 
 #endif
