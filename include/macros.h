@@ -98,4 +98,8 @@
 #define DISPLAY_CHANGE_ITEMS_QUERY \
     "SELECT * " \
     "FROM Change_Item;"
+
+#define ADD_CHANGE_REQUEST_QUERY \
+        "INSERT INTO Change_Request \
+        VALUES (?, ?, ?, ?, ?, ?, ?)"
 #endif 
