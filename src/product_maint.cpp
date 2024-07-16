@@ -130,24 +130,26 @@ void create_product_release() {
  * to the product queries module to update the given product.
 */
 void update_product_release() {
-    string name;
+    string product_name;
     string release_id;
     string release_date;
+    string old_product_name;
+    string old_release_id;
     
     //Display all current product releases in the database
     display_product_release_query();
 
     for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
-        cout << "Please Enter the Product Name:\n";
+        cout << "Please Enter the Product Name to be Edited:\n";
         cout << "Maximum Length: 30 Characters \n";
-        cin >> name;
+        cin >> old_product_name;
 
-        cout << "Please Enter the Product ReleaseID:\n";
+        cout << "Please Enter the Product ReleaseID to be Edited:\n";
         cout << "Format: #.#.# \n";
-        cin >> release_id;
+        cin >> old_release_id;
 
         //Check if Product Name and ReleaseID is valid
-        if (search_product_query(name, release_id) == true) {  // if product found IMPLEMENT
+        if (search_product_query(old_product_name, old_release_id) == true) {
             break;
         } else {
             cout << "Enter valid product name and releaseID!\n";
@@ -161,10 +163,10 @@ void update_product_release() {
     }
 
     for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
-        cout << "Please Enter the Product Name:\n";
+        cout << "Please Enter the New Product Name:\n";
         cout << "Maximum Length: 30 Characters \n";
-        cin >> name;
-        if (name.length() <= 30) {
+        cin >> product_name;
+        if (product_name.length() <= 30) {
             break;
         }
         else {
@@ -179,7 +181,7 @@ void update_product_release() {
     }
 
     for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
-        cout << "Please Enter the ReleaseID:\n";
+        cout << "Please Enter the New ReleaseID:\n";
         cout << "Required Format: #.#.# \n";
         cin >> release_id;
         if (release_id.length() <= 30) {
@@ -202,7 +204,7 @@ void update_product_release() {
         int month_int;
         int day_int;
 
-        cout << "Please Enter the Product Release Date:\n";
+        cout << "Please Enter the New Product Release Date:\n";
         cout << "Required Format: YYYY-MM-DD\n";
         cin >> release_date;
 
@@ -237,16 +239,20 @@ void update_product_release() {
     string confirm_input;
 
     //Display the provided inputs back to the user for confirmation
-    cout << "Product Name: " << name << "\n";
-    cout << "ReleaseID: " << release_id << "\n";
-    cout << "Release Date: " << release_date << "\n";
+    cout << "Old Product Name: " << old_product_name << "\n";
+    cout << "Old ReleaseID: " << old_release_id << "\n";
+    cout << "New Product Name: " << product_name << "\n";
+    cout << "New ReleaseID: " << release_id << "\n";
+    cout << "New Release Date: " << release_date << "\n";
     cout << "Do you want to confirm the updated product release? (Y/N)\n";
     cin >> confirm_input;
 
     if (confirm_input == "Y" || confirm_input == "y"){
-        update_product_release_query(name,            // name of the product
-                                     release_id,     // release ID of the product
-                                     release_date    // next anticipated release date of product
+        update_product_release_query(product_name,
+                                     release_id, 
+                                     release_date,  
+                                     old_product_name, 
+                                     old_release_id     
                         );
         cout << "You have successfully updated a product release!\n";
         cout << "You have been re-directed to the Main Menu!\n";
