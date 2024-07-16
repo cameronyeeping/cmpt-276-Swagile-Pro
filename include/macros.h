@@ -72,8 +72,11 @@
 
 #define UPDATE_PRODUCT_RELEASE_QUERY "UPDATE Product_Release \
     SET product_name = ?, release_id = ?, release_date = ? \
-    WHERE product_name = ?, release_id = ?;"
+    WHERE product_name = ? AND release_id = ?;"
 
+#define DELETE_PRODUCT_RELEASE_QUERY "DELETE FROM Product_Release \
+    WHERE product_name = ?;"
+    
 #define DISPLAY_PRODUCT_QUERY "SELECT DISTINCT product_name FROM Product_Release;"
 
 #define DISPLAY_PRODUCT_RELEASE_QUERY "SELECT * \
@@ -104,4 +107,25 @@
     JOIN Change_Request ON Users.user_id = Change_Request.user_id \
     WHERE Change_Request.product_name = ?\
     AND Change_Request.bug_release_id = ?;"
+
+#define ADD_CHANGE_REQUEST_QUERY \
+        "INSERT INTO Change_Request \
+        VALUES (?, ?, ?, ?, ?, ?, ?)"
+
+#define UPDATE_CHANGE_REQUEST_QUERY \
+        "UPDATE Change_Request \
+        SET user_id = ?, product_name = ?, bug_release_id = ?, report_date = ?, completion_state = ?, severity = ? \
+        WHERE change_id = ?;"
+
+#define DELETE_CHANGE_REQUEST_QUERY "DELETE FROM Change_Request \
+        WHERE change_id = ?;"
+
+#define DISPLAY_CHANGE_REQUEST_QUERY \
+        "SELECT * " \
+        "FROM Change_Request;"
+
+#define CHANGE_ITEM_DETAIL_QUERY \
+        "SELECT *  \
+        FROM Change_Item \
+        WHERE change_id = ?;"
 #endif 
