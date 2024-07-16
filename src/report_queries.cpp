@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void display_report_1_query(const string& product) {
+void display_report_1_query(string product) {
     // ! Fix output formatting
     char* errMsg = nullptr;
     sqlite3_stmt* stmt;
