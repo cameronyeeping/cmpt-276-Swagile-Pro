@@ -98,4 +98,25 @@
 #define DISPLAY_CHANGE_ITEMS_QUERY \
     "SELECT * " \
     "FROM Change_Item;"
+
+#define ADD_CHANGE_REQUEST_QUERY \
+        "INSERT INTO Change_Request \
+        VALUES (?, ?, ?, ?, ?, ?, ?)"
+
+#define UPDATE_CHANGE_REQUEST_QUERY \
+        "UPDATE Change_Request \
+        SET user_id = ?, product_name = ?, bug_release_id = ?, report_date = ?, completion_state = ?, severity = ? \
+        WHERE change_id = ?;"
+
+#define DELETE_CHANGE_REQUEST_QUERY "DELETE FROM Change_Request \
+        WHERE change_id = ?;"
+
+#define DISPLAY_CHANGE_REQUEST_QUERY \
+        "SELECT * " \
+        "FROM Change_Request;"
+
+#define CHANGE_ITEM_DETAIL_QUERY \
+        "SELECT *  \
+        FROM Change_Item \
+        WHERE change_id = ?;"
 #endif 

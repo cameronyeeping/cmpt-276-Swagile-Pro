@@ -35,9 +35,12 @@ void add_product_release_query(std::string product_name,            // name of t
  * to the ones provided as parameters.
 */
 void update_product_release_query(std::string product_name,            // name of the product
-                        std::string release_id,     // release ID of the product
-                        std::string release_date    // next anticipated release date of product
+                        std::string release_id,         // release ID of the product
+                        std::string release_date,       // next anticipated release date of product
+                        std::string old_product_name,   // original product name
+                        std::string old_release_id      // original release id
                         );
+    
 //===================================
 
 /*
