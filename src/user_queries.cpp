@@ -73,8 +73,8 @@ Query_Results search_user_query(string first, string last) {
     // SQL query to search for users by first and last names
 
     sqlite3_stmt* stmt;
-    int rc = sqlite3_prepare_v2(db, SEARCH_USER_QUERY, -1, &stmt, nullptr);
-    if (rc != SQLITE_OK) {
+    int exit= sqlite3_prepare_v2(db, SEARCH_USER_QUERY, -1, &stmt, nullptr);
+    if (exit!= SQLITE_OK) {
         cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << endl;
         return result;
     }
@@ -89,7 +89,7 @@ Query_Results search_user_query(string first, string last) {
     int num_cols = sqlite3_column_count(stmt);
 
     // Fetch each row of the result set
-    while ((rc = sqlite3_step(stmt)) == SQLITE_ROW) {
+    while ((exit= sqlite3_step(stmt)) == SQLITE_ROW) {
         ++num_rows;
         for (int col = 0; col < num_cols; ++col) {
             const char* text = reinterpret_cast<const char*>(sqlite3_column_text(stmt, col));
@@ -97,7 +97,7 @@ Query_Results search_user_query(string first, string last) {
         }
     }
 
-    if (rc != SQLITE_DONE && rc != SQLITE_ROW) {
+    if (exit != SQLITE_DONE && exit != SQLITE_ROW) {
         cerr << "Execution finished with an error: " << sqlite3_errmsg(db) << std::endl;
     }
 
@@ -110,16 +110,16 @@ Query_Results search_user_query(string first, string last) {
 // ! UNTESTED
 bool search_user_id_query(string user_id) {
     sqlite3_stmt* stmt;
-    int rc = sqlite3_prepare_v2(db, GET_USER_ID_QUERY, -1, &stmt, nullptr);
-    if (rc != SQLITE_OK) {
+    int exit = sqlite3_prepare_v2(db, GET_USER_ID_QUERY, -1, &stmt, nullptr);
+    if (exit != SQLITE_OK) {
         cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << endl;
         return false;
     }
     sqlite3_bind_text(stmt, 1, user_id.c_str(), -1, SQLITE_STATIC);
-    rc = sqlite3_step(stmt);
+    exit = sqlite3_step(stmt);
 
     bool exists = false;
-    if (rc == SQLITE_ROW) {
+    if (exit == SQLITE_ROW) {
         exists = sqlite3_column_int(stmt, 0) > 0;
     }
 
