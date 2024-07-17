@@ -20,8 +20,6 @@
 #include <iostream>
 using namespace std;
 
-sqlite3* db; // global pointer
-bool headers_printed = false; // used for formatting output
 /*
  * connect_db() calls the sqlite3 api to connect to swagile_pro.db. If 
  * the database does not exist, it creates a new one and creates all of the necessary tables.

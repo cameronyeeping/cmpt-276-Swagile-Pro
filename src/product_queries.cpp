@@ -1,6 +1,8 @@
 #include "../include/database_connection.h"
 #include "../include/product_queries.h"
 #include "../include/macros.h"
+#include "../include/globals.h"
+
 using namespace std;
 
 void add_product_release_query(string product_name, string release_id, string release_date)

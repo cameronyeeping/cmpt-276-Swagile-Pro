@@ -1,6 +1,8 @@
 #include "../include/database_connection.h"
 #include "../include/issue_queries.h"
 #include "../include/macros.h"
+#include "../include/globals.h"
+
 using namespace std;
 
 void add_change_request_query(string user_id, string product_name, string bug_release_id, string report_date, string completion_state, string severity)
