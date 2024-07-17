@@ -3,18 +3,14 @@
  * Revision History:
  * Rev 1. 2024/07/01 Original by Cameron Yee-Ping
  * ------------------------------------------------
- * This module handles all queries involving the user table in swagile_pro.db. It
- * assumes that all inputs have been checked for correctness. If an error occurs when 
- * performing these queries, the functions will throw an error that can be caught by the caller.
+ * This module contains the implementations of the exported functions outlined in "user_queries.h"
 */
-
 
 #include "../include/database_connection.h"
 #include "../include/user_queries.h"
 #include "../include/macros.h"
 // sqlite3 * db is globally defined
 using namespace std;
-
 
 /*
  * add_user_query() adds a user to the user table in swagile_pro.db with the attributes that are

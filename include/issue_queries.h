@@ -100,7 +100,11 @@ void delete_change_item_query(std::string change_id // changeID of the change it
  * display_change_items_query() displays ALL of the existing change items in the change item table.
 */
 void display_change_items_query();
+//===========================================================
 
+/*
+ * search_change_id_query() returns a boolean indicating whether the given changeID exists
+*/
 bool search_change_id_query(std::string change_id);
 
 
