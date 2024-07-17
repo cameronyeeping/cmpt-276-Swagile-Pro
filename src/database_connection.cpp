@@ -1,3 +1,10 @@
+/*
+ * Module: Database Connection
+ * Revision History: 
+ * 2024/07/16 - Originial by Cameron Yee-Ping
+ * ----------------------------------------------------
+ * This module contains implementations of the functions defined in database_connection.h
+*/
 #include "../include/database_connection.h"
 #include "../include/macros.h"
 #include "../include/globals.h"

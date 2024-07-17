@@ -1,6 +1,14 @@
+/*
+ * Module: Macros
+ * Revision History:
+ * 2024/07/15 - Original by Cameron Yee-Ping
+ * ------------------------------------------------------
+ * This module defines macros used throughout the low level modules
+ * They are sql queries that are used when preparing a statement. This module does not
+ * have a corresponding .cpp file.
+*/
 #ifndef MACROS_H 
 #define MACROS_H
-// DO NOT SUBMIT THIS MODULE
 
 #include <iostream>
 #include <sqlite3.h>

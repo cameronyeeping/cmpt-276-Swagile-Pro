@@ -2,8 +2,6 @@
  * Module: Database connection
  * Revision History:
  * Rev. 2 2024/07/15 Modified by Cameron Yee-Ping
- *                   - Added global db pointer
- *                   - Added global headers_printed flag
  *                   - Added callback function for SELECT queries.
  * Rev. 1 2024/07/01 Original by Cameron Yee-Ping
  * ------------------------------------------------
@@ -34,7 +32,7 @@ int connect_db();
 int disconnect_db();
 
 /*
- * callback controls output for select queries
+ * callback controls output when writing to console.
 */
 int callback(void *NotUsed, int argc, char **argv, char **azColName);
 

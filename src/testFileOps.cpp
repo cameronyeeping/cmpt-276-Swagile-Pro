@@ -1,9 +1,9 @@
 /*
- * Module: Unit Test for Main
+ * Module: testFileOps
  * Revision History: 
- * Rev 1. - 2024/07/02 Original by Cameron Yee-Ping
- * This module performs a performance test on create_report_1_query(), 
- * as well as a functional test on add_user_query()
+ * Rev 1. - 2024/07/16 Original by Cameron Yee-Ping
+ * ----------------------------------------------------
+ * This module tests file operations with multiple functions in the User Queries module 
 */
 #include <iostream>
 #include <string>
