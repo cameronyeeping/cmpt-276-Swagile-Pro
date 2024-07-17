@@ -175,7 +175,6 @@ void update_user() {
         }
     }
 
-    //User has 5 times to provide valid input, bring to main menu after 5
     for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
         cout << "Please Enter the User First Name:\n";
         cout << "Maximum Length: 30 Characters \n";
