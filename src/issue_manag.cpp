@@ -1,6 +1,5 @@
 /*
- 
-Module: User Maintenance
+Module: Issue Manag
 Rev 1. - 2024-07-15 Original by Dylan Dang
 --------------------------------------------------
 This module contains the implementations of the exported functions outlined in "issue_manag.h"
