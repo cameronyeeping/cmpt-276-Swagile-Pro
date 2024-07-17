@@ -19,16 +19,19 @@ using namespace std;
 */
 void add_product_release_query(string product_name, string release_id, string release_date)
 {
+
     sqlite3_stmt* stmt;
-    //Prepare a query statement from the given macro
+
+    // prepare statement using macro
     int exit = sqlite3_prepare_v2(db, ADD_PRODUCT_RELEASE_QUERY, -1, &stmt, nullptr);
 
-    //Bind text to query
+    // bind parameters to statement
     sqlite3_bind_text(stmt, 1, product_name.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_text(stmt, 2, release_id.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_text(stmt, 3, release_date.c_str(), -1, SQLITE_STATIC);
 
-    //Execute the statement
+
+    // execute statement
     exit = sqlite3_step(stmt);
     if (exit != SQLITE_DONE) {
         cerr << "Error executing statement: " << sqlite3_errmsg(db) << std::endl;
@@ -50,6 +53,7 @@ void update_product_release_query(string product_name, string release_id, string
     int exit = sqlite3_prepare_v2(db, UPDATE_PRODUCT_RELEASE_QUERY, -1, &stmt, nullptr);
 
     //Bind text to query
+
     sqlite3_bind_text(stmt, 1, product_name.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_text(stmt, 2, release_id.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_text(stmt, 3, release_date.c_str(), -1, SQLITE_STATIC);
@@ -88,6 +92,7 @@ void delete_product_release_query(string product_name)
         return;
     }
     //Call destructor
+
     sqlite3_finalize(stmt);
 }
 
@@ -96,10 +101,13 @@ void delete_product_release_query(string product_name)
 */
 void display_product_query()
 {
+    // global variable used by callback to produce nice formatting
     headers_printed = false;
     char* errMsg = nullptr;
 
-    //Prepare a query statement from the given macro
+
+    // sqlite3_exec() performs prepare, bind, and step all in one step. We can use it 
+    // because we don't have arbitrary values in our query
     int exit = sqlite3_exec(db, DISPLAY_PRODUCT_QUERY, callback, 0, &errMsg);
     if (exit != SQLITE_OK) {
         cerr << "Error executing SELECT statement: " << errMsg << std::endl;
@@ -113,10 +121,12 @@ void display_product_query()
 */
 void display_product_release_query()
 {
+    // global variable used by callback to produce nice formatting
     headers_printed = false;
     char* errMsg = nullptr;
 
-    //Prepare a query statement from the given macro
+    // sqlite3_exec() performs prepare, bind, and step all in one step. We can use it 
+    // because we don't have arbitrary values in our query
     int exit = sqlite3_exec(db, DISPLAY_PRODUCT_RELEASE_QUERY, callback, 0, &errMsg);
     if (exit != SQLITE_OK) {
         cerr << "Error executing SELECT statement: " << errMsg << std::endl;
@@ -129,19 +139,21 @@ void display_product_release_query()
 */
 bool search_product_query(string name, string release_id) {
     sqlite3_stmt* stmt;
-    //Prepare a query statement from the given macro
+
+    // prepare statement with given macro
     int exit = sqlite3_prepare_v2(db, GET_PRODUCT_QUERY, -1, &stmt, nullptr);
     if (exit != SQLITE_OK) {
         cerr << "Failed to prepare statement: " << sqlite3_errmsg(db) << endl;
         return false;
     }
 
-    //Bind text to query
+    // bind parameters to statement
     sqlite3_bind_text(stmt, 1, name.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_text(stmt, 2,release_id.c_str(), -1, SQLITE_STATIC);
     exit = sqlite3_step(stmt);
 
-    //Check if result is not empty
+
+    // check if there is a row with a matching primary key (Maximum of 1)
     bool exists = false;
     if (exit == SQLITE_ROW) {
         exists = true;
