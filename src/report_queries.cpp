@@ -2,6 +2,8 @@
 #include "../include/database_connection.h"
 #include "../include/macros.h"
 #include "../include/report_queries.h"
+#include "../include/globals.h"
+
 
 using namespace std;
 

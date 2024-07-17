@@ -6,6 +6,7 @@
 #include <sqlite3.h>
 #include <string>
 
+#define PRAGMA_FOREIGN_KEYS "pragma foreign_keys=on;"
 #define CREATE_USERS_TABLE "CREATE TABLE IF NOT EXISTS Users ( \
     user_id INTEGER PRIMARY KEY, \
     first_name char(30) NOT NULL, \
@@ -33,7 +34,7 @@
     FOREIGN KEY (product_name, bug_release_id) REFERENCES Product_Release (product_name, release_id) \
         ON DELETE CASCADE \
         ON UPDATE CASCADE);"
-#define GET_CHANGE_ID_QUERY "SELECT * FROM Change_Request WHERE change_id = ?"
+#define GET_CHANGE_ID_QUERY "SELECT * FROM Change_Request WHERE change_id = ?;"
 
 #define CREATE_CHANGE_ITEM_TABLE "CREATE TABLE IF NOT EXISTS Change_Item ( \
     change_id INTEGER, \
@@ -114,7 +115,7 @@
 
 #define ADD_CHANGE_REQUEST_QUERY \
         "INSERT INTO Change_Request \
-        VALUES (?, ?, ?, ?, ?, ?, ?)"
+        VALUES (?, ?, ?, ?, ?, ?, ?);"
 
 #define UPDATE_CHANGE_REQUEST_QUERY \
         "UPDATE Change_Request \

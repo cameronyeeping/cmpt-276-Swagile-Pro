@@ -1,5 +1,6 @@
 #include "../include/database_connection.h"
 #include "../include/macros.h"
+#include "../include/globals.h"
 
 using namespace std;
 int callback(void* data, int argc, char** argv, char** azColName) { 
@@ -20,7 +21,8 @@ int callback(void* data, int argc, char** argv, char** azColName) {
 
 int init_db() {
     char* errmsg = nullptr;
-    int exit = sqlite3_exec(db, CREATE_USERS_TABLE, callback, 0, &errmsg);
+    int exit = sqlite3_exec(db, PRAGMA_FOREIGN_KEYS, callback, 0, &errmsg);
+    exit = sqlite3_exec(db, CREATE_USERS_TABLE, callback, 0, &errmsg);
     exit = sqlite3_exec(db, CREATE_PRODUCT_RELEASE_TABLE, callback, 0, &errmsg);
     exit = sqlite3_exec(db, CREATE_CHANGE_REQUEST_TABLE, callback, 0, &errmsg);
     exit = sqlite3_exec(db, CREATE_CHANGE_ITEM_TABLE, callback, 0, &errmsg);
@@ -37,7 +39,7 @@ int connect_db() {
         cerr << "Error opening database: " << sqlite3_errmsg(db) << endl;
         return 1;
     }
-    if(init_db) {
+    if(init_db()) {
         return 1;
     }
     return 0;

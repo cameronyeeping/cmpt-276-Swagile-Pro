@@ -1,6 +1,8 @@
 #include "../include/database_connection.h"
 #include "../include/user_queries.h"
 #include "../include/macros.h"
+#include "../include/globals.h"
+
 // sqlite3 * db is globally defined
 using namespace std;
 
