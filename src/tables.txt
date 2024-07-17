@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS Users (
     user_id INTEGER PRIMARY KEY,
     first_name char(30) NOT NULL,
     last_name char(30) NOT NULL,
+    phone_number char(15) NOT NULL,
     email char(50) NOT NULL,
     department char(50)
 );

@@ -11,6 +11,7 @@
     user_id INTEGER PRIMARY KEY, \
     first_name char(30) NOT NULL, \
     last_name char(30) NOT NULL, \
+    phone_number char(13) NOT NULL, \
     email char(50) NOT NULL, \
     department char(50));"
 
@@ -54,7 +55,7 @@
 
 #define UPDATE_USER_QUERY "UPDATE Users \
     SET first_name = ?, last_name = ?, phone_number = ?, email = ?, department = ? \
-    WHERE userID = ?;"
+    WHERE user_id = ?;"
 
 
 #define SEARCH_USER_QUERY "SELECT * FROM Users \
@@ -62,7 +63,7 @@
     AND last_name = ?;"
 #define DELETE_USER_QUERY \
     "DELETE FROM Users " \
-    "WHERE userID = ?;"
+    "WHERE user_id = ?;"
 
 #define DISPLAY_USERS_QUERY \
     "SELECT * " \

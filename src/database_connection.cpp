@@ -22,7 +22,15 @@ int callback(void* data, int argc, char** argv, char** azColName) {
 int init_db() {
     char* errmsg = nullptr;
     int exit = sqlite3_exec(db, PRAGMA_FOREIGN_KEYS, callback, 0, &errmsg);
+    if (exit != SQLITE_OK) {
+        cerr << "Error enabling foreign keys: " << errmsg << endl;
+        return 1;
+    }
     exit = sqlite3_exec(db, CREATE_USERS_TABLE, callback, 0, &errmsg);
+    if (exit != SQLITE_OK) {
+        cerr << "Error creating table: " << errmsg << endl;
+        return 1;
+    }
     exit = sqlite3_exec(db, CREATE_PRODUCT_RELEASE_TABLE, callback, 0, &errmsg);
     exit = sqlite3_exec(db, CREATE_CHANGE_REQUEST_TABLE, callback, 0, &errmsg);
     exit = sqlite3_exec(db, CREATE_CHANGE_ITEM_TABLE, callback, 0, &errmsg);
