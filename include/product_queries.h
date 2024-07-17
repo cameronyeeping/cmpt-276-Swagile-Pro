@@ -1,7 +1,8 @@
 /*
  * Module: Product Queries
  * Revision History:
- * Rev 1. 2024/07/01 Original by Cameron Yee-Ping
+ * Version 2 - 2024/07/16 - Revised by Ananya Singh
+ * Version 1 -  2024/07/01 Original by Cameron Yee-Ping
  * ------------------------------------------------
  * This module contains all queries involving the product table in swagile_pro.db
  * The functions in this module assume that all function parameters have been checked for correctness.
