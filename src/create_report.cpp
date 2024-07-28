@@ -39,11 +39,9 @@ void create_report_2() {
     string product;
     string product_release;
 
-    string product;
     cout << "Please Enter the Product Name:\n";
     cin >> product;
 
-    string product_release;
     cout << "Please Enter the Product Release ID:\n";
     cin >> product_release;
 

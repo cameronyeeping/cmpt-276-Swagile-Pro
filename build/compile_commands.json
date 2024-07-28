@@ -1,0 +1,62 @@
+[
+{
+  "directory": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Swagile_Pro.dir/src/create_report.cpp.o -c /Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/create_report.cpp",
+  "file": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/create_report.cpp",
+  "output": "CMakeFiles/Swagile_Pro.dir/src/create_report.cpp.o"
+},
+{
+  "directory": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Swagile_Pro.dir/src/database_connection.cpp.o -c /Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/database_connection.cpp",
+  "file": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/database_connection.cpp",
+  "output": "CMakeFiles/Swagile_Pro.dir/src/database_connection.cpp.o"
+},
+{
+  "directory": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Swagile_Pro.dir/src/globals.cpp.o -c /Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/globals.cpp",
+  "file": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/globals.cpp",
+  "output": "CMakeFiles/Swagile_Pro.dir/src/globals.cpp.o"
+},
+{
+  "directory": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Swagile_Pro.dir/src/main.cpp.o -c /Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/main.cpp",
+  "file": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/main.cpp",
+  "output": "CMakeFiles/Swagile_Pro.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Swagile_Pro.dir/src/product_maint.cpp.o -c /Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/product_maint.cpp",
+  "file": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/product_maint.cpp",
+  "output": "CMakeFiles/Swagile_Pro.dir/src/product_maint.cpp.o"
+},
+{
+  "directory": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Swagile_Pro.dir/src/product_queries.cpp.o -c /Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/product_queries.cpp",
+  "file": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/product_queries.cpp",
+  "output": "CMakeFiles/Swagile_Pro.dir/src/product_queries.cpp.o"
+},
+{
+  "directory": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Swagile_Pro.dir/src/ui.cpp.o -c /Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/ui.cpp",
+  "file": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/ui.cpp",
+  "output": "CMakeFiles/Swagile_Pro.dir/src/ui.cpp.o"
+},
+{
+  "directory": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Swagile_Pro.dir/src/user_maint.cpp.o -c /Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/user_maint.cpp",
+  "file": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/user_maint.cpp",
+  "output": "CMakeFiles/Swagile_Pro.dir/src/user_maint.cpp.o"
+},
+{
+  "directory": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Swagile_Pro.dir/src/user_queries.cpp.o -c /Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/user_queries.cpp",
+  "file": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/user_queries.cpp",
+  "output": "CMakeFiles/Swagile_Pro.dir/src/user_queries.cpp.o"
+},
+{
+  "directory": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -o CMakeFiles/Swagile_Pro.dir/src/report_queries.cpp.o -c /Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/report_queries.cpp",
+  "file": "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/report_queries.cpp",
+  "output": "CMakeFiles/Swagile_Pro.dir/src/report_queries.cpp.o"
+}
+]

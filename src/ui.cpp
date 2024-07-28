@@ -12,6 +12,7 @@
 #include "../include/macros.h"
 #include "../include/product_maint.h"
 #include "../include/user_maint.h"
+#include "../include/issue_queries.h"
 
 using namespace std;
 
@@ -34,12 +35,6 @@ void start_ui() {
         case 4:
             create_report_menu();
             break;
-        case 5:
-            cout << "Enter back-up directory: ";
-            cin >> directory;
-            cout << "Back-up created\n";
-
-            break;
         case 0:
             break;
         default:
@@ -55,7 +50,6 @@ static int display_main_menu(){
     cout << "2) Product Maintenance\n";
     cout << "3) Issue Management\n";
     cout << "4) Create a Report\n";
-    cout << "5) Backup System\n";
     cout << "0) Exit\n";
     cout << "\nEnter selection: ";
     cin >> selection;
@@ -65,24 +59,21 @@ static int display_main_menu(){
 static void change_request_menu() {
     int selection = 0;
     cout << "1) Create Change Request\n";
-    cout << "2) Update Change Request\n";
-    cout << "3) Delete Change Request\n";
-    cout << "4) Display Change Requests\n";
+    cout << "2) Display Change Requests\n";
+    cout << "0) Back\n";
     cin.ignore();
     cin >> selection;
     switch (selection) {
     case 1:
-        cout << "Create change request placeholder\n";
+        create_change_request();
         break;
     case 2:
-        cout << "Update Change Request placeholder\n";
+        display_change_request_query();
         break;
-    case 3:
-        cout << "Delete Change Request placeholder\n";
+    case 0:
         break;
-    case 4:
-        cout << "display change request placeholder\n";
-        break;
+    default: 
+        cout << "Invalid input\n";
     }
 }
 
@@ -133,7 +124,7 @@ static void create_report_menu() {
 
 static void product_menu(){
     int selection = 0;
-    cout << "1) Create Product\n";
+    cout << "1) Create Product Release\n";
     cout << "2) Create Product Release\n";
     cout << "3) Update Product\n";
     cout << "4) Update Product Release\n";
@@ -146,10 +137,10 @@ static void product_menu(){
     cin >> selection; 
     switch (selection) {
     case 1:
-        cout << "Create Product menu\n";
+        create_product();
         break;
     case 2:
-        cout << "Create Product release menu\n";
+        create_product_release();
     case 0:
         break;
     default: 
@@ -163,20 +154,16 @@ static void user_menu() {
     int selection;
     cout << "1) Create Employee\n";
     cout << "2) Edit Employee\n";
-    cout << "3) Delete Employee\n";
     cout << "0) Back\n";
     cout << "\nEnter selection: ";
 
     cin >> selection;
     switch (selection) {
     case 1: 
-        cout << "create employee placeholder\n";
+        create_user();
         break;
     case 2: 
-        cout << "edit employee placeholder\n";
-        break;
-    case 3:
-        cout << "delete employee placeholder\n";
+        update_user();
         break;
     case 0:
         break;

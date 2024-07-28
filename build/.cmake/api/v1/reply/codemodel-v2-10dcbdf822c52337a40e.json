@@ -7,8 +7,16 @@
 				{
 					"build" : ".",
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
 					"projectIndex" : 0,
-					"source" : "."
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
 				}
 			],
 			"name" : "Debug",
@@ -19,10 +27,23 @@
 					[
 						0
 					],
-					"name" : "Project"
+					"name" : "Swagile_Pro",
+					"targetIndexes" : 
+					[
+						0
+					]
 				}
 			],
-			"targets" : []
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Swagile_Pro::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Swagile_Pro-Debug-297d766144067d619cd6.json",
+					"name" : "Swagile_Pro",
+					"projectIndex" : 0
+				}
+			]
 		}
 	],
 	"kind" : "codemodel",
@@ -34,6 +55,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 5
+		"minor" : 7
 	}
 }
