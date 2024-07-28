@@ -1,7 +1,8 @@
 /*
  * Module: Macros
  * Revision History:
- * 2024/07/15 - Original by Cameron Yee-Ping
+ * Version 2 - 2024/07/16 - Revised by Ananya Singh
+ * Version 1 - 2024/07/15 - Original by Cameron Yee-Ping
  * ------------------------------------------------------
  * This module defines macros used throughout the low level modules
  * They are sql queries that are used when preparing a statement. This module does not
