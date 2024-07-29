@@ -13,6 +13,8 @@
 #include "../include/product_maint.h"
 #include "../include/user_maint.h"
 #include "../include/issue_queries.h"
+#include "../include/database_connection.h"
+
 
 using namespace std;
 
@@ -35,6 +37,8 @@ void start_ui() {
         case 4:
             create_report_menu();
             break;
+        case 5:
+            create_backup("./");
         case 0:
             break;
         default:
@@ -50,6 +54,7 @@ static int display_main_menu(){
     cout << "2) Product Maintenance\n";
     cout << "3) Issue Management\n";
     cout << "4) Create a Report\n";
+    cout << "5) Create Backup\n";
     cout << "0) Exit\n";
     cout << "\nEnter selection: ";
     cin >> selection;
@@ -137,7 +142,7 @@ static void product_menu(){
     cin >> selection; 
     switch (selection) {
     case 1:
-        create_product();
+        create_product_release();
         break;
     case 2:
         create_product_release();

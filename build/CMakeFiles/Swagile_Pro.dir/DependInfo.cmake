@@ -11,6 +11,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/create_report.cpp" "CMakeFiles/Swagile_Pro.dir/src/create_report.cpp.o" "gcc" "CMakeFiles/Swagile_Pro.dir/src/create_report.cpp.o.d"
   "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/database_connection.cpp" "CMakeFiles/Swagile_Pro.dir/src/database_connection.cpp.o" "gcc" "CMakeFiles/Swagile_Pro.dir/src/database_connection.cpp.o.d"
   "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/globals.cpp" "CMakeFiles/Swagile_Pro.dir/src/globals.cpp.o" "gcc" "CMakeFiles/Swagile_Pro.dir/src/globals.cpp.o.d"
+  "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/issue_manag.cpp" "CMakeFiles/Swagile_Pro.dir/src/issue_manag.cpp.o" "gcc" "CMakeFiles/Swagile_Pro.dir/src/issue_manag.cpp.o.d"
+  "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/issue_queries.cpp" "CMakeFiles/Swagile_Pro.dir/src/issue_queries.cpp.o" "gcc" "CMakeFiles/Swagile_Pro.dir/src/issue_queries.cpp.o.d"
   "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/main.cpp" "CMakeFiles/Swagile_Pro.dir/src/main.cpp.o" "gcc" "CMakeFiles/Swagile_Pro.dir/src/main.cpp.o.d"
   "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/product_maint.cpp" "CMakeFiles/Swagile_Pro.dir/src/product_maint.cpp.o" "gcc" "CMakeFiles/Swagile_Pro.dir/src/product_maint.cpp.o.d"
   "/Users/cameron/Desktop/projects/repos/cmpt-276-Swagile-Pro/src/product_queries.cpp" "CMakeFiles/Swagile_Pro.dir/src/product_queries.cpp.o" "gcc" "CMakeFiles/Swagile_Pro.dir/src/product_queries.cpp.o.d"
@@ -22,10 +24,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
 
 # Targets to which this target links which contain Fortran sources.
 set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
-  )
-
-# Targets to which this target links which contain Fortran sources.
-set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

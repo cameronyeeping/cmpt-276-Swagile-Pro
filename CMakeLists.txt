@@ -15,6 +15,8 @@ add_executable(Swagile_Pro
     src/database_connection.cpp
     src/globals.cpp
     src/main.cpp
+    src/issue_manag.cpp 
+    src/issue_queries.cpp
     src/product_maint.cpp
     src/product_queries.cpp
     src/ui.cpp

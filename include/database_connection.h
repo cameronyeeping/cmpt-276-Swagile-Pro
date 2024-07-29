@@ -36,4 +36,11 @@ int disconnect_db();
 */
 int callback(void *NotUsed, int argc, char **argv, char **azColName);
 
+//======================================
+
+/*
+ * backup takes a directory as a parameter, and creates a copy of the database in the specified directory. The 
+ * backup file has format swagile_pro_backup_YYYY-MM-DD
+*/
+int create_backup(string directory);
 #endif

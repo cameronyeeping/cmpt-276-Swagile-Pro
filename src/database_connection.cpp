@@ -5,6 +5,12 @@
  * ----------------------------------------------------
  * This module contains implementations of the functions defined in database_connection.h
 */
+#include <iostream>
+#include <iomanip>
+#include <ctime>
+#include <sstream>
+#include <string>
+
 #include "../include/database_connection.h"
 #include "../include/macros.h"
 #include "../include/globals.h"
@@ -24,6 +30,54 @@ int callback(void* data, int argc, char** argv, char** azColName) {
     }
     cout << endl;
     return 0;
+}
+
+int create_backup(string directory) {
+    auto t = time(nullptr);
+    auto tm = *localtime(&t);
+    sqlite3* new_db = nullptr;
+    sqlite3_backup* backup = nullptr;
+
+    ostringstream oss;
+    oss << put_time(&tm, "%Y-%m-%d");
+    auto str = oss.str();
+    string db_name = "swagile_pro_backup_";
+
+    db_name.append(str); 
+    db_name.append(".db"); // s is the new database
+    
+    int exit = sqlite3_open(db_name.c_str(), &new_db);
+    if (exit != SQLITE_OK) {
+        cerr << "Cannot open database:" << sqlite3_errmsg(new_db) << endl;
+        sqlite3_close(new_db);
+        return -1;
+    }
+
+    backup = sqlite3_backup_init(new_db, "main", db, "main");
+    if (!backup) {
+        cerr << "Failed to initiate backup: " << sqlite3_errmsg(new_db) << endl;
+        sqlite3_close(new_db);
+        return -1;
+    }
+
+    exit = sqlite3_backup_step(backup, -1);
+    if(exit != SQLITE_DONE) {
+        cerr << "Error during backup: " << sqlite3_errmsg(new_db) << endl;
+        sqlite3_close(new_db);
+        return -1;
+    }
+    
+    sqlite3_backup_finish(backup);
+    if(exit == SQLITE_DONE) {
+        cout << "Backup created successfully\n";
+        exit = 0;
+    }
+    else {
+        cerr << "Error during backup: " << sqlite3_errmsg(new_db) << endl;
+        exit = -1;
+    }
+    sqlite3_close(new_db);
+    return exit;
 }
 
 int init_db() {
