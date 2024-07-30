@@ -30,23 +30,22 @@ void create_change_request() {
     string severity;
 
     //User has 5 attempts to provide valid input, bring to main menu after 5
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the UserID of the User:\n";
         cin >> user_id;
         if (search_user_id_query(user_id) == true) { 
             break;
         } else {
             cout << "Enter a valid UserID!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Product Name:\n";
         cout << "Maximum Length: 30 Characters \n";
         cin >> name;
@@ -59,16 +58,15 @@ void create_change_request() {
             break;
         } else {
             cout << "Enter valid product name and releaseID!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         string month_str;
         string day_str;
 
@@ -88,23 +86,20 @@ void create_change_request() {
 
             if (month_int < 1 || month_int > 12 || day_int < 1 || day_int > 31) {
                 cout << "Current date must be in correct format!\n";
-                continue;
             } else {
                 break;
             }
-
         } else {
             cout << "Current date must be in correct format!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Severity Level of the Issue:\n";
         cout << "Required Format: Number between 1-4\n";
         cin >> severity;
@@ -112,9 +107,8 @@ void create_change_request() {
             break;
         } else {
             cout << "Severity Level must be in correct format!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
@@ -161,16 +155,15 @@ void query_change_item() {
     string change_id;
 
     display_change_items_query();
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the ChangeID of the User:\n";
         cin >> change_id;
         if (search_change_id_query(change_id) == true) { 
             break;
         } else {
             cout << "Enter a valid ChangeID!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
@@ -192,23 +185,22 @@ void create_change_item() {
     string future_release; 
     string description;
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the ChangeID of the User:\n";
         cin >> change_id;
         if (search_change_id_query(change_id) == true) { 
             break;
         } else {
             cout << "Enter a valid ChangeID!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Product Name:\n";
         cout << "Maximum Length: 30 Characters \n";
         cin >> product_name;
@@ -217,16 +209,15 @@ void create_change_item() {
         }
         else {
             cout << "Product name must be 30 characters or less!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         string month_str;
         string day_str;
 
@@ -246,23 +237,21 @@ void create_change_item() {
 
             if (month_int < 1 || month_int > 12 || day_int < 1 || day_int > 31) {
                 cout << "Antipicated release date must be in correct format!\n";
-                continue;
             } else {
                 break;
             }
 
         } else {
             cout << "Anticipated release date must be in correct format!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Description of the Issue:\n";
         cout << "Maximum Length: 1000 Characters \n";
         cin >> product_name;
@@ -271,9 +260,8 @@ void create_change_item() {
         }
         else {
             cout << "Description must be 1000 characters or less!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
