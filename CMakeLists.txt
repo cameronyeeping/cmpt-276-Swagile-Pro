@@ -25,6 +25,9 @@ add_executable(Swagile_Pro
     src/report_queries.cpp
 )
 
+
+
+
 # Link the SQLite3 library
 find_package(SQLite3 REQUIRED)
 if(SQLite3_FOUND)
