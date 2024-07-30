@@ -24,7 +24,7 @@ void create_product_release() {
     string release_date;
 
     //User has 5 attempts to provide a valid input, if number of attempt exceeds 5, they are redirected to the main menu
-     for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Product Name:\n";
         cout << "Maximum Length: 30 Characters \n";
         cin >> name;
@@ -33,16 +33,15 @@ void create_product_release() {
         }
         else {
             cout << "Product name must be 30 characters or less!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Product ReleaseID:\n";
         cout << "Maximum Length: 30 Characters \n";
         cout << "Required Format: #.#.# \n";
@@ -51,16 +50,15 @@ void create_product_release() {
             break;
         } else {
             cout << "ReleaseID must be 30 characters or less!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         string month_str;
         string day_str;
 
@@ -83,16 +81,14 @@ void create_product_release() {
             //Check if inputted date segments are valid
             if (month_int < 1 || month_int > 12 || day_int < 1 || day_int > 31) {
                 cout << "Release date must be in correct format!\n";
-                continue;
             } else {
                 break;
             }
 
         } else {
             cout << "Release date must be in correct format!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
@@ -139,7 +135,7 @@ void update_product_release() {
     //Display all current product releases in the database
     display_product_release_query();
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Product Name to be Edited:\n";
         cout << "Maximum Length: 30 Characters \n";
         cin >> old_product_name;
@@ -153,16 +149,15 @@ void update_product_release() {
             break;
         } else {
             cout << "Enter valid product name and releaseID!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the New Product Name:\n";
         cout << "Maximum Length: 30 Characters \n";
         cin >> product_name;
@@ -171,16 +166,15 @@ void update_product_release() {
         }
         else {
             cout << "Product name must be 30 characters or less!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the New ReleaseID:\n";
         cout << "Required Format: #.#.# \n";
         cin >> release_id;
@@ -188,16 +182,15 @@ void update_product_release() {
             break;
         } else {
             cout << "ReleaseID must be 30 characters or less!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         string month_str;
         string day_str;
 
@@ -220,16 +213,14 @@ void update_product_release() {
             //Check if inputted date segments are valid
             if (month_int < 1 || month_int > 12 || day_int < 1 || day_int > 31) {
                 cout << "Release date must be in correct format!\n";
-                continue;
             } else {
                 break;
             }
 
         } else {
             cout << "Release date must be in correct format!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
