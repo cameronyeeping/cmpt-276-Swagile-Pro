@@ -61,11 +61,14 @@ static int display_main_menu(){
     return selection;
 }
 
-static void change_request_menu() {
+static void issue_menu() {
     int selection = 0;
-    cout << "=======Change Request Maintenance=======\n";
+    cout << "=======Issue Management=======\n";
     cout << "1) Create Change Request\n";
     cout << "2) Display Change Requests\n";
+    cout << "3) Create Change Item\n";
+    cout << "4) Display Change Items\n";
+
     cout << "0) Back\n";
     cin.ignore();
     cin >> selection;
@@ -76,50 +79,11 @@ static void change_request_menu() {
     case 2:
         display_change_request_query();
         break;
-    case 0:
-        break;
-    default: 
-        cout << "Invalid input\n";
-    }
-}
-
-static void change_item_maintenance_menu() {
-    cout << "=======Change Item Maintenance=======\n";
-    cout << "1) Create Change Item\n";
-    cout << "2) Display Change Items\n";
-    cout << "0) Back\n";
-    int selection;
-    cin >> selection;
-
-    switch (selection) {
-    case 1:
+    case 3:
         create_change_item();
         break;
-    case 2: 
+    case 4:
         display_change_items_query();
-        break;
-    case 0:
-        break;
-    default:
-        cout << "invalid input\n";
-    }
-
-}
-
-static void issue_menu() {
-    int selection = 0;
-    cout << "=======Issue Management=======\n";
-    cout << "1) Change Request Maintenance\n";
-    cout << "2) Change Item Maintenance\n";
-    cout << "0) Back\n";
-    cin.ignore();
-    cin >> selection;
-    switch (selection) {
-    case 1:
-        change_request_menu();
-        break;
-    case 2:
-        change_item_maintenance_menu();
         break;
     case 0: 
         break;
