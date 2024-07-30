@@ -19,14 +19,15 @@ using namespace std;
 int callback(void* data, int argc, char** argv, char** azColName) { 
     if (!headers_printed) {
         for (int i = 0; i < argc; i++) {
-            cout << setw(20) << azColName[i]; // Adjust column width as needed
+            cout << setw(30) << azColName[i]; // Adjust column width as needed
         }
-        cout << endl << "===========================================================================================================\n";
+        cout << endl << "===================================================================================================================================================="
+        << "================================\n";
         headers_printed = true;
     }
 
     for (int i = 0; i < argc; i++) {
-        cout << setw(20) << (argv[i] ? argv[i] : "NULL");
+        cout << setw(30) << (argv[i] ? argv[i] : "NULL");
     }
     cout << endl;
     return 0;

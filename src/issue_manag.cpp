@@ -127,9 +127,9 @@ void create_change_request() {
 
     if (confirm_input == "Y" || confirm_input == "y"){
         add_change_request_query(user_id, 
-                                 name,    
-                                 date,   
+                                 name,       
                                  bug_release_id, 
+                                 date,
                                  completion,
                                  severity 
                                 );
@@ -186,7 +186,7 @@ void create_change_item() {
     string description;
 
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
-        cout << "Please Enter the ChangeID of the User:\n";
+        cout << "Please Enter the ChangeID of a Change Request:\n";
         cin >> change_id;
         if (search_change_id_query(change_id) == true) { 
             break;
@@ -254,8 +254,8 @@ void create_change_item() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Description of the Issue:\n";
         cout << "Maximum Length: 1000 Characters \n";
-        cin >> product_name;
-        if (product_name.length() <= 30) {
+        cin >> description;
+        if (description.length() <= 30) {
             break;
         }
         else {

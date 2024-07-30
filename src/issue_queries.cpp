@@ -23,9 +23,8 @@ void add_change_request_query(string user_id, string product_name, string bug_re
 
     //Prepare a query statement from the given macro
     int exit = sqlite3_prepare_v2(db, ADD_CHANGE_REQUEST_QUERY, -1, &stmt, nullptr);
-
     //Bind text to query
-    sqlite3_bind_text(stmt, 1, user_id.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_int(stmt, 1, atoi(user_id.c_str()));
     sqlite3_bind_text(stmt, 2, product_name.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_text(stmt, 3, bug_release_id.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_text(stmt, 4, report_date.c_str(), -1, SQLITE_STATIC);
@@ -103,7 +102,7 @@ void add_change_item_query(string change_id, string product_name, string future_
     int exit = sqlite3_prepare_v2(db, ADD_CHANGE_ITEM_QUERY, -1, &stmt, nullptr);
 
     //Bind text to query
-    sqlite3_bind_text(stmt, 1, change_id.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_int(stmt, 1, atoi(change_id.c_str()));
     sqlite3_bind_text(stmt, 2, product_name.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_text(stmt, 3, future_release.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_text(stmt, 4, description.c_str(), -1, SQLITE_STATIC);

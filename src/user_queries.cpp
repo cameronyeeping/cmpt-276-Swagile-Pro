@@ -74,6 +74,7 @@ void update_user_query(string userID, string first_name, string last_name, strin
 /*
  * display_users_query() displays all users that currently exist in the users table using a SELECT FROM query.
 */
+
 void display_users_query() {
     headers_printed = false;
     char* errMsg = nullptr;
