@@ -40,6 +40,7 @@ void add_change_request_query(string user_id, string product_name, string bug_re
     }
     //Call destructor
     sqlite3_finalize(stmt);
+    cout << "created change request\n";
 }
 
 /*
@@ -54,7 +55,7 @@ void update_change_request_query(string change_id, string user_id, string produc
     int exit = sqlite3_prepare_v2(db, UPDATE_CHANGE_REQUEST_QUERY, -1, &stmt, nullptr);
 
     //Bind text to query
-    sqlite3_bind_text(stmt, 1, user_id.c_str(), -1, SQLITE_STATIC);
+    sqlite3_bind_int(stmt, 1, atoi(change_id.c_str()));
     sqlite3_bind_text(stmt, 2, product_name.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_text(stmt, 3, bug_release_id.c_str(), -1, SQLITE_STATIC);
     sqlite3_bind_text(stmt, 4, report_date.c_str(), -1, SQLITE_STATIC);

@@ -14,6 +14,7 @@
 #include "../include/report_queries.h"
 #include "../include/ui.h"
 #include "../include/database_connection.h"
+#include "../include/user_queries.h"
 #include <sqlite3.h>
 
 #include <cstdlib>
@@ -29,25 +30,24 @@ void load_data()
     string s = "1.1.";
     string s2 = "tester";
     // Loading the database with 50 products
-    for(int i = 0; i <= 50; i++) 
-    {
+    for(int i = 0; i <= 50; i++) {
         s = "1.1.";
 
         s.append(to_string(i));
         cout << s << endl;
-        add_product_release_query("tester", s, "2024-07-29");
+        //add_product_release_query("tester", s, "2024-07-29");
+        //add_change_request_query("1", "tester", "1.1.4","2024-07-30", "Acknowledged", "4");
+        for(int j = 0; j <= 10; j++) {
+            add_change_item_query(to_string(i), "tester", s, "example desc");
+        }
     }
 
-    // Loading each product with 10 change items
-    for(int i = 0; i <= 10; i++)
-    {
-        int rand = (std::rand() % 2001) + 1;
-        std::string rand_str = std::to_string(rand);
-        add_change_item_query(rand_str, "tester", "1.1.1", "example desc");
-    }
 
     // Load a particular product with 100 change items
     add_product_release_query("product1", "1.1.2", "2024-07-29");
+    add_change_request_query("1", "product1", "1.1.2", "2024-07-30", "Acknowledged", "2");
+}
+void load_change_items() {  
     for (int i = 0; i <= 100; i++)
     {
         int rand = (std::rand() % 2001) + 1;
@@ -55,17 +55,17 @@ void load_data()
         add_change_item_query(rand_str, "product1", "1.1.2", "example2 desc");
     }
 }
-
 int main()
 {
     connect_db();
     // only load data once
-    
-    load_data();
+    //add_change_request_query("1", "tester", "1.1.4","2024-07-30", "Acknowledged", "4");
 
+    //load_data();
+    //add_user_query("Cameron", "Yee-Ping", "6045006750", "cly7@sfu.ca", "Engineering");
     auto start = std::chrono::high_resolution_clock::now();
 
-    display_report_1_query("product1");
+    display_report_1_query("tester");
    
     auto end = std::chrono::high_resolution_clock::now();
 

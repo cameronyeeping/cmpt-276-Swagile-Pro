@@ -2,7 +2,8 @@
  * Program to load 500 unique users
 */
 
-#include "user_queries.cpp"
+#include "../include/user_queries.h"
+#include "../include/database_connection.h"
 #include <string>
 
 void load_data()
@@ -17,6 +18,9 @@ void load_data()
 
 int main() 
 {
+    connect_db();
     load_data();
+    display_users_query();
+    disconnect_db();
     return 0;
 }
