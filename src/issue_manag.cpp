@@ -1,5 +1,7 @@
 /*
 Module: Issue Manag
+* Rev 3. - 2024-07-30 Modified by Dylan Dang
+         - Fixed create_change_item
 * Rev 2. - 2024-07-29 Modified by Dylan Dang
          - Fixed 5 wrong attempt loop
 * Rev 1. - 2024-07-15 Original by Dylan Dang
@@ -32,7 +34,8 @@ void create_change_request() {
     //User has 5 attempts to provide valid input, bring to main menu after 5
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the UserID of the User:\n";
-        cin >> user_id;
+        cin.ignore();
+        getline(cin, user_id);
         if (search_user_id_query(user_id) == true) { 
             break;
         } else {
@@ -48,11 +51,13 @@ void create_change_request() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Product Name:\n";
         cout << "Maximum Length: 30 Characters \n";
-        cin >> name;
+        cin.ignore();
+        getline(cin, name);
 
         cout << "Please Enter the Product ReleaseID:\n";
         cout << "Format: #.#.# \n";
-        cin >> bug_release_id;
+        cin.ignore();
+        getline(cin, bug_release_id);
 
         if (search_product_query(name, bug_release_id) == true) {
             break;
@@ -75,7 +80,8 @@ void create_change_request() {
 
         cout << "Please Enter the Current Date:\n";
         cout << "Required Format: YYYY-MM-DD\n";
-        cin >> date;
+        cin.ignore();
+        getline(cin, date);
 
         if (date.length() == 10 && date[4] == '-' && date[7] == '-' ) {
             month_str = date.substr(5,6);
@@ -102,7 +108,8 @@ void create_change_request() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Severity Level of the Issue:\n";
         cout << "Required Format: Number between 1-4\n";
-        cin >> severity;
+        cin.ignore();
+        getline(cin, severity);
         if (severity.length() == 1 && severity[0] <= '4' && severity[0] >= '1') {
             break;
         } else {
@@ -123,7 +130,8 @@ void create_change_request() {
     cout << "ReleaseID: " << bug_release_id << "\n";
     cout << "Severity Level: " << severity << "\n";
     cout << "Do you want to add this change request? (Y/N)\n";
-    cin >> confirm_input;
+    cin.ignore();
+    getline(cin, confirm_input);
 
     if (confirm_input == "Y" || confirm_input == "y"){
         add_change_request_query(user_id, 
@@ -157,7 +165,8 @@ void query_change_item() {
     display_change_items_query();
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the ChangeID of the User:\n";
-        cin >> change_id;
+        cin.ignore();
+        getline(cin, change_id);
         if (search_change_id_query(change_id) == true) { 
             break;
         } else {
@@ -182,16 +191,18 @@ given inputs.
 void create_change_item() {
     string change_id; 
     string product_name;
-    string future_release; 
+    string anticipated_release_id; 
     string description;
-
+    cin.ignore(10000, '\n');
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the ChangeID of the User:\n";
-        cin >> change_id;
+        getline(cin, change_id);
+        //cout << change_id << endl;
         if (search_change_id_query(change_id) == true) { 
             break;
         } else {
             cout << "Enter a valid ChangeID!\n";
+            cin.clear();
         }
         if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
@@ -199,16 +210,21 @@ void create_change_item() {
             return;
         }
     }
-
+    
+    //cin.ignore();
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Product Name:\n";
         cout << "Maximum Length: 30 Characters \n";
-        cin >> product_name;
+        //cin.ignore();
+        getline(cin, product_name);
+        cout << product_name << endl;
         if (product_name.length() <= 30) {
             break;
         }
         else {
             cout << "Product name must be 30 characters or less!\n";
+            cin.clear();
+            //cin.ignore(10000, '\n');
         }
         if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
@@ -216,33 +232,17 @@ void create_change_item() {
             return;
         }
     }
-
+    
+    //cin.ignore();
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
-        string month_str;
-        string day_str;
+        cout << "Please Enter the Product ReleaseID:\n";
+        cout << "Format: #.#.# \n";
+        getline(cin, anticipated_release_id);
 
-        int month_int;
-        int day_int;
-
-        cout << "Please Enter the Anticipated Release Date:\n";
-        cout << "Required Format: YYYY-MM-DD\n";
-        cin >> future_release;
-
-        if (future_release.length() == 10 && future_release[4] == '-' && future_release[7] == '-' ) {
-            month_str = future_release.substr(5,6);
-            day_str = future_release.substr(8,9);
-
-            month_int = stoi(month_str);
-            day_int = stoi(day_str);
-
-            if (month_int < 1 || month_int > 12 || day_int < 1 || day_int > 31) {
-                cout << "Antipicated release date must be in correct format!\n";
-            } else {
-                break;
-            }
-
+        if (anticipated_release_id.length() <= 30) {
+            break;
         } else {
-            cout << "Anticipated release date must be in correct format!\n";
+            cout << "Enter valid product name and releaseID!\n";
         }
         if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
@@ -251,11 +251,12 @@ void create_change_item() {
         }
     }
 
+    //cin.ignore();
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Description of the Issue:\n";
         cout << "Maximum Length: 1000 Characters \n";
-        cin >> product_name;
-        if (product_name.length() <= 30) {
+        getline(cin, description); 
+        if (description.length() <= 10000) {
             break;
         }
         else {
@@ -272,15 +273,17 @@ void create_change_item() {
 
         cout << "ChangeID: " << change_id << "\n";
         cout << "Product Name: " << product_name << "\n";
-        cout << "Anticipated Release Date: " << future_release << "\n";
+        cout << "Anticipated Release ID: " << anticipated_release_id << "\n";
         cout << "Description: " << description << "\n";
         cout << "Do you want to add this change item? (Y/N)\n";
-        cin >> confirm_input;
+        //cin.ignore();
+        getline(cin, confirm_input);
+        cout << confirm_input << endl;
 
     if (confirm_input == "Y" || confirm_input == "y"){
         add_change_item_query(change_id,     
                               product_name,   
-                              future_release,  
+                              anticipated_release_id,  
                               description      
                              );
         cout << "You have successfully created a new change item!\n";

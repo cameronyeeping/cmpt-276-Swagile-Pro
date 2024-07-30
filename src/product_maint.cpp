@@ -29,7 +29,8 @@ void create_product_release() {
      for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Product Name:\n";
         cout << "Maximum Length: 30 Characters \n";
-        cin >> name;
+        cin.ignore();
+        getline(cin, name);
         if (name.length() <= 30) {
             break;
         }
@@ -47,7 +48,8 @@ void create_product_release() {
         cout << "Please Enter the Product ReleaseID:\n";
         cout << "Maximum Length: 30 Characters \n";
         cout << "Required Format: #.#.# \n";
-        cin >> release_id;
+        cin.ignore();
+        getline(cin, release_id);
         if (release_id.length() <= 30) {
             break;
         } else {
@@ -69,7 +71,8 @@ void create_product_release() {
 
         cout << "Please Enter the Product Release Date:\n";
         cout << "Required Format: YYYY-MM-DD\n";
-        cin >> release_date;
+        cin.ignore();
+        getline(cin, release_date);
 
         //Check if inputted date is in correct format 
         if (release_date.length() == 10 && release_date[4] == '-' && release_date[7] == '-' ) {
@@ -104,7 +107,8 @@ void create_product_release() {
     cout << "ReleaseID: " << release_id << "\n";
     cout << "Release Date: " << release_date << "\n";
     cout << "Do you want to add this product? (Y/N)\n";
-    cin >> confirm_input;
+    cin.ignore();
+    getline(cin, confirm_input);
 
     if (confirm_input == "Y" || confirm_input == "y"){
         add_product_release_query(name,           // name of the product
@@ -140,11 +144,13 @@ void update_product_release() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Product Name to be Edited:\n";
         cout << "Maximum Length: 30 Characters \n";
-        cin >> old_product_name;
+        cin.ignore();
+        getline(cin, old_product_name);
 
         cout << "Please Enter the Product ReleaseID to be Edited:\n";
         cout << "Format: #.#.# \n";
-        cin >> old_release_id;
+        cin.ignore();
+        getline(cin, old_release_id);
 
         //Check if Product Name and ReleaseID is valid
         if (search_product_query(old_product_name, old_release_id) == true) {
@@ -162,7 +168,8 @@ void update_product_release() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the New Product Name:\n";
         cout << "Maximum Length: 30 Characters \n";
-        cin >> product_name;
+        cin.ignore();
+        getline(cin, product_name);
         if (product_name.length() <= 30) {
             break;
         }
@@ -179,7 +186,8 @@ void update_product_release() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the New ReleaseID:\n";
         cout << "Required Format: #.#.# \n";
-        cin >> release_id;
+        cin.ignore();
+        getline(cin, release_id);
         if (release_id.length() <= 30) {
             break;
         } else {
@@ -201,7 +209,8 @@ void update_product_release() {
 
         cout << "Please Enter the New Product Release Date:\n";
         cout << "Required Format: YYYY-MM-DD\n";
-        cin >> release_date;
+        cin.ignore();
+        getline(cin, release_date);
 
         //Check if inputted date is in correct format
         if (release_date.length() == 10 && release_date[4] == '-' && release_date[7] == '-' ) {
@@ -238,7 +247,8 @@ void update_product_release() {
     cout << "New ReleaseID: " << release_id << "\n";
     cout << "New Release Date: " << release_date << "\n";
     cout << "Do you want to confirm the updated product release? (Y/N)\n";
-    cin >> confirm_input;
+    cin.ignore();
+    getline(cin, confirm_input);
 
     if (confirm_input == "Y" || confirm_input == "y"){
         update_product_release_query(product_name,
