@@ -71,7 +71,6 @@ void create_user() {
             break;
         } else {
             cout << "Phone number must be 10 characters\n";
-            continue;
         }
         if (attempt_num == 0){
             cout << "You have exceeded the number of allowed attempts!\n";
