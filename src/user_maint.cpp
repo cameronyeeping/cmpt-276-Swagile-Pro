@@ -27,7 +27,7 @@ void create_user() {
     string department;
 
     //User has 5 attempts to provide a valid input, if number of attempt exceeds 5, they are redirected to the main menu
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User First Name:\n";
         cout << "Maximum Length: 30 Characters \n";
         cin >> first_name;
@@ -36,16 +36,15 @@ void create_user() {
         }
         else {
             cout << "First name must be 30 characters or less!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Last Name:\n";
         cout << "Maximum Length: 30 Characters \n";
         cin >> last_name;
@@ -53,16 +52,15 @@ void create_user() {
             break;
         } else {
             cout << "Last name must be 30 characters or less!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Phone Number:\n";
         cout << "Required Length: 10 Characters \n";
         cout << "Format: 1231231234 \n";
@@ -71,16 +69,15 @@ void create_user() {
             break;
         } else {
             cout << "Phone number must be 10 characters\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Email:\n";
         cout << "Maximum Length: 50 Characters \n";
         cout << "Format: example@example.com \n";
@@ -89,16 +86,15 @@ void create_user() {
             break;
         } else {
             cout << "Email must be 50 characters or less\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Department:\n";
         cout << "Maximum Length: 50 Characters\n";
         cin >> department;
@@ -106,9 +102,8 @@ void create_user() {
             break;
         } else {
             cout << "Department must be 50 characters or less\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
@@ -158,7 +153,7 @@ void update_user() {
 
     //Display all current users in the database
     display_users_query();
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the UserID of the User:\n";
         cin >> user_id;
         //Check if userID is valid
@@ -166,16 +161,15 @@ void update_user() {
             break;
         } else {
             cout << "Enter a valid UserID!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User First Name:\n";
         cout << "Maximum Length: 30 Characters \n";
         cin >> first_name;
@@ -184,16 +178,15 @@ void update_user() {
         }
         else {
             cout << "First name must be 30 characters or less!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Last Name:\n";
         cout << "Maximum Length: 30 Characters \n";
         cin >> last_name;
@@ -201,16 +194,15 @@ void update_user() {
             break;
         } else {
             cout << "Last name must be 30 characters or less!\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Phone Number:\n";
         cout << "Required Length: 10 Characters \n";
         cin >> phone_number;
@@ -218,16 +210,15 @@ void update_user() {
             break;
         } else {
             cout << "Phone number must be 10 characters\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Email:\n";
         cout << "Maximum Length: 50 Characters \n";
         cout << "Format: example@example.com \n";
@@ -236,16 +227,15 @@ void update_user() {
             break;
         } else {
             cout << "Email must be 50 characters or less\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
         }
     }
 
-    for (int attempt_num = 5; attempt_num >= 0; attempt_num--) { 
+    for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Department:\n";
         cout << "Maximum Length: 50 Characters\n";
         cin >> department;
@@ -253,9 +243,8 @@ void update_user() {
             break;
         } else {
             cout << "Department must be 50 characters or less\n";
-            continue;
         }
-        if (attempt_num == 0){
+        if (attempt_num == 1){
             cout << "You have exceeded the number of allowed attempts!\n";
             cout << "You have been re-directed to the Main Menu!\n";
             return;
