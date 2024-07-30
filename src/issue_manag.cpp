@@ -1,6 +1,8 @@
 /*
 Module: Issue Manag
-Rev 1. - 2024-07-15 Original by Dylan Dang
+* Rev 2. - 2024-07-29 Modified by Dylan Dang
+         - Fixed 5 wrong attempt loop
+* Rev 1. - 2024-07-15 Original by Dylan Dang
 --------------------------------------------------
 This module contains the implementations of the exported functions outlined in "issue_manag.h"
 */
