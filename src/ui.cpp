@@ -63,6 +63,7 @@ static int display_main_menu(){
 
 static void issue_menu() {
     int selection = 0;
+    cout << "=======Issue Management=======\n";
     cout << "1) Change Request Maintenance\n";
     cout << "2) Change Item Maintenance\n";
     cout << "0) Back\n";
@@ -86,6 +87,7 @@ static void issue_menu() {
 
 static void create_report_menu() {
     int selection = 0;
+    cout << "=======Create a Report=======\n";
     cout << "1) Create Report #1\n";
     cout << "2) Create Report #2\n";
     cout << "0) Back\n";
@@ -107,6 +109,7 @@ static void create_report_menu() {
 
 static void product_menu(){
     int selection = 0;
+    cout << "=======Product Maintenance=======\n";
     cout << "1) Create Product Release\n";
     cout << "2) Update Product Release\n";
     cout << "3) Display Product Release\n";
@@ -137,6 +140,7 @@ static void product_menu(){
 
 static void user_menu() {
     int selection;
+    cout << "=======User Maintenance=======\n";
     cout << "1) Create User\n";
     cout << "2) Update User\n";
     cout << "3) Display Users\n";
