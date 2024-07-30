@@ -61,6 +61,51 @@ static int display_main_menu(){
     return selection;
 }
 
+static void change_request_menu() {
+    int selection = 0;
+    cout << "=======Change Request Maintenance=======\n";
+    cout << "1) Create Change Request\n";
+    cout << "2) Display Change Requests\n";
+    cout << "0) Back\n";
+    cin.ignore();
+    cin >> selection;
+    switch (selection) {
+    case 1:
+        create_change_request();
+        break;
+    case 2:
+        display_change_request_query();
+        break;
+    case 0:
+        break;
+    default: 
+        cout << "Invalid input\n";
+    }
+}
+
+static void change_item_maintenance_menu() {
+    cout << "=======Change Item Maintenance=======\n";
+    cout << "1) Create Change Item\n";
+    cout << "2) Display Change Items\n";
+    cout << "0) Back\n";
+    int selection;
+    cin >> selection;
+
+    switch (selection) {
+    case 1:
+        create_change_item();
+        break;
+    case 2: 
+        display_change_items_query();
+        break;
+    case 0:
+        break;
+    default:
+        cout << "invalid input\n";
+    }
+
+}
+
 static void issue_menu() {
     int selection = 0;
     cout << "=======Issue Management=======\n";
@@ -97,7 +142,7 @@ static void create_report_menu() {
         create_report_1();
         break;
     case 2:
-        create_report_2;
+        create_report_2();
         break;
     case 0:
         break;
@@ -162,49 +207,4 @@ static void user_menu() {
         break;
     }
     return;
-}
-
-static void change_request_menu() {
-    int selection = 0;
-    cout << "=======Change Request Maintenance=======\n";
-    cout << "1) Create Change Request\n";
-    cout << "2) Display Change Requests\n";
-    cout << "0) Back\n";
-    cin.ignore();
-    cin >> selection;
-    switch (selection) {
-    case 1:
-        create_change_request();
-        break;
-    case 2:
-        display_change_request_query();
-        break;
-    case 0:
-        break;
-    default: 
-        cout << "Invalid input\n";
-    }
-}
-
-static void change_item_maintenance_menu() {
-    cout << "=======Change Item Maintenance=======\n";
-    cout << "1) Create Change Item\n";
-    cout << "2) Display Change Items\n";
-    cout << "0) Back\n";
-    int selection;
-    cin >> selection;
-
-    switch (selection) {
-    case 1:
-        create_change_item();
-        break;
-    case 2: 
-        display_change_items_query();
-        break;
-    case 0:
-        break;
-    default:
-        cout << "invalid input\n";
-    }
-
 }
