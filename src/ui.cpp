@@ -162,6 +162,7 @@ static void user_menu() {
 
 static void change_request_menu() {
     int selection = 0;
+    cout << "=======Change Request Maintenance=======\n";
     cout << "1) Create Change Request\n";
     cout << "2) Display Change Requests\n";
     cout << "0) Back\n";
