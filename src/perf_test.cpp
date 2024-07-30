@@ -20,13 +20,22 @@
 #include <string>
 #include <ctime>
 
+//g++ create_report.cpp database_connection.cpp globals.cpp perf_test.cpp product_maint.cpp product_queries.cpp ui.cpp issue_manag.cpp issue_queries.cpp user_maint.cpp user_queries.cpp report_queries.cpp -std=c++17 -l sqlite3
+
+using namespace std;
 void load_data()
 {
     srand(0);
+    string s = "1.1.";
+    string s2 = "tester";
     // Loading the database with 50 products
     for(int i = 0; i <= 50; i++) 
     {
-        add_product_release_query("tester", "1.1.0", "2024-07-29");
+        s = "1.1.";
+
+        s.append(to_string(i));
+        cout << s << endl;
+        add_product_release_query("tester", s, "2024-07-29");
     }
 
     // Loading each product with 10 change items
