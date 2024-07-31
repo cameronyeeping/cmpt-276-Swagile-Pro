@@ -120,7 +120,6 @@ void create_product_release() {
                                   release_id,     // release ID of the product
                                   release_date    // next anticipated release date of product
                         );
-        cout << "You have successfully created a new product!\n";
         cout << "You have been re-directed to the Main Menu!\n";
     } else {
         cout << "Action has been aborted.\n";
@@ -262,7 +261,6 @@ void update_product_release() {
                                      old_product_name, 
                                      old_release_id     
                         );
-        cout << "You have successfully updated a product release!\n";
         cout << "You have been re-directed to the Main Menu!\n";
     } else {
         cout << "Action has been aborted.\n";
