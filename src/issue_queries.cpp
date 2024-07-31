@@ -72,7 +72,24 @@ void update_change_request_query(string change_id, string user_id, string produc
     //Call destructor
     sqlite3_finalize(stmt);
 }
+/*
+ * cr_callback is a special callback function to print change requests neatly.
+*/
+static int cr_callback(void* data, int argc, char** argv, char** azColName) { 
+    if (!headers_printed) {
+        for (int i = 0; i < argc; i++) {
+            cout << setw(20) << azColName[i]; // Adjust column width as needed
+        }
+        cout << endl << "====================================================================================================================================================\n";
+        headers_printed = true;
+    }
 
+    for (int i = 0; i < argc; i++) {
+        cout << setw(20) << (argv[i] ? argv[i] : "NULL");
+    }
+    cout << endl;
+    return 0;
+}
 /*
  * display_change_request_query() displays all change requests that currently exist in the table.
 */
@@ -83,7 +100,7 @@ void display_change_request_query()
 
     //Binding text not required
     //Execute the statement
-    int exit = sqlite3_exec(db, DISPLAY_CHANGE_REQUEST_QUERY, callback, 0, &errMsg);
+    int exit = sqlite3_exec(db, DISPLAY_CHANGE_REQUEST_QUERY, cr_callback, 0, &errMsg);
     if (exit != SQLITE_OK) {
         cerr << "Error executing SELECT statement: " << errMsg << std::endl;
         sqlite3_free(errMsg);
