@@ -42,6 +42,7 @@ void add_change_request_query(string user_id, string product_name, string bug_re
     }
     //Call destructor
     sqlite3_finalize(stmt);
+    cout << "You have successfully created a new change request!\n";
 }
 
 /*
@@ -135,6 +136,7 @@ void add_change_item_query(string change_id, string product_name, string future_
     }
     //Call destructor
     sqlite3_finalize(stmt);
+    cout << "You have successfully created a new change item!\n";
 }
 
 /*
@@ -163,6 +165,8 @@ void update_change_item_query(string change_id, string product_name, string futu
     }
     //Call destructor
     sqlite3_finalize(stmt);
+    cout << "You have successfully updated a change request!\n";
+
 }
 
 /*

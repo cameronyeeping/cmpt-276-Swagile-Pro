@@ -40,6 +40,8 @@ void add_user_query(string first_name, string last_name, string phone_number, st
     }
     //Call destructor
     sqlite3_finalize(stmt);
+    cout << "You have successfully created a new user!\n";
+
 }
 
 /*
@@ -69,6 +71,8 @@ void update_user_query(string userID, string first_name, string last_name, strin
     }
     //Call destructor
     sqlite3_finalize(stmt);
+    cout << "You have successfully updated a user!\n";
+
 }
 
 /*

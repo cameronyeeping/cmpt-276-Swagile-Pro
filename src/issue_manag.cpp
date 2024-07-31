@@ -138,7 +138,7 @@ void create_change_request() {
                                  completion,
                                  severity 
                                 );
-        cout << "You have successfully created a new change request!\n";
+
         cout << "The newly added change request is the bottom most item in the table:\n";
         display_change_request_query();
         cout << "You have been re-directed to the Main Menu!\n";
@@ -277,7 +277,7 @@ void create_change_item() {
                               anticipated_release_id,  
                               description      
                              );
-        cout << "You have successfully created a new change item!\n";
+
         cout << "The newly added change request is the bottom most item in the table:\n";
         display_change_items_query();
         cout << "You have been re-directed to the Main Menu!\n";
@@ -468,7 +468,6 @@ void update_change_request() {
                                 completion_state,
                                 severity
                                 );
-        cout << "You have successfully updated a change request!\n";
         cout << "You have been re-directed to the Main Menu!\n";
     } else {
         cout << "Action has been aborted.\n";
