@@ -1,6 +1,8 @@
 /*
  * Module: Issue Queries
  * Rev. 1 2024/07/01 Original by Cameron Yee-Ping
+ * Rev. 2 2024/07/30 Updated by Cameron Yee-Ping
+ *                  - Added special callback function for change requests
  * ------------------------------------------------
  * This module contains the implementations of the exported functions outlined in "issue_queries.h"
 */
