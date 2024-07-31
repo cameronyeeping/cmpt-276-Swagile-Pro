@@ -1,5 +1,7 @@
 /*
  * Module: Product Maintenance
+ * Rev 3. - 2024-07-30 Modified by Dylan Dang
+          - Fixed invalid trial bugs
  * Rev 2. - 2024-07-29 Modified by Dylan Dang
  *        - Fixed 5 wrong attempt loop
  * Rev 1. - 2024-07-15 Original by William Phan
