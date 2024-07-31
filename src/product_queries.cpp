@@ -40,6 +40,7 @@ void add_product_release_query(string product_name, string release_id, string re
     }
     //Call destructor
     sqlite3_finalize(stmt);
+    cout << "You have successfully created a new product!\n";
 }
 
 /*
@@ -69,6 +70,7 @@ void update_product_release_query(string product_name, string release_id, string
     }
     //Call destructor
     sqlite3_finalize(stmt);
+    cout << "You have successfully updated a product release!\n";
 
 }
 
