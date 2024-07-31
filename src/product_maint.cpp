@@ -1,5 +1,7 @@
 /*
  * Module: Product Maintenance
+ * Rev 4. - 2024-07-30 Modified by William Phan
+          - Implemented update_change_request()
  * Rev 3. - 2024-07-30 Modified by Dylan Dang
           - Fixed invalid trial bugs
  * Rev 2. - 2024-07-29 Modified by Dylan Dang

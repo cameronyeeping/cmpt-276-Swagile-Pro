@@ -66,10 +66,11 @@ static void issue_menu() {
     cout << "=======Issue Management=======\n";
     cout << "1) Create Change Request\n";
     cout << "2) Display Change Requests\n";
-    cout << "3) Create Change Item\n";
-    cout << "4) Display Change Items\n";
-
+    cout << "3) Update Change Request\n";
+    cout << "4) Create Change Item\n";
+    cout << "5) Display Change Items\n";
     cout << "0) Back\n";
+
     cin.ignore();
     cin >> selection;
     switch (selection) {
@@ -80,9 +81,12 @@ static void issue_menu() {
         display_change_request_query();
         break;
     case 3:
-        create_change_item();
+        update_change_request();
         break;
     case 4:
+        create_change_item();
+        break;
+    case 5:
         display_change_items_query();
         break;
     case 0: 
@@ -145,7 +149,6 @@ static void product_menu(){
     }
     return;
 }
-
 
 static void user_menu() {
     int selection;

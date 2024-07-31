@@ -38,6 +38,11 @@ void query_change_item();
 */
 void create_change_item();
 
-
+/*
+ * update_change_request polls for ChangeID, product name, anticipated release date, and description.
+ * After checking for validity, it passes control to the issue queries module to update a change request with the 
+ * given inputs.
+*/
+void update_change_request();
 
 #endif
