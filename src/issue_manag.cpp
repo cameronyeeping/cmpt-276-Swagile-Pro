@@ -161,7 +161,7 @@ void query_change_item() {
     display_change_items_query();
     cin.ignore(10000, '\n');
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
-        cout << "Please Enter the ChangeID of the User:\n";
+        cout << "Please Enter the ChangeID of a change item:\n";
         
         getline(cin, change_id);
         if (search_change_id_query(change_id) == true) { 

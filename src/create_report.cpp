@@ -22,6 +22,8 @@ using namespace std;
 void create_report_1() {
     string product;
     cout << "Please Enter the Product Name:\n";
+    cin.ignore(100000, '\n');
+
     cin >> product;
 
     //Display all the change items that is not completed/cancelled
@@ -38,6 +40,7 @@ void create_report_1() {
 void create_report_2() {
     string product;
     string product_release;
+    cin.ignore(100000, '\n');
 
     cout << "Please Enter the Product Name:\n";
     cin >> product;

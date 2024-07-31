@@ -27,11 +27,13 @@ void create_product_release() {
     string release_id;
     string release_date;
 
-    cin.ignore(10000, '\n');
+    cin.ignore(100000, '\n');
     //User has 5 attempts to provide a valid input, if number of attempt exceeds 5, they are redirected to the main menu
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the Product Name:\n";
         cout << "Maximum Length: 30 Characters \n";
+        //cin.ignore(10000, '\n');
+
         getline(cin, name);
         if (name.length() <= 30) {
             break;
@@ -73,7 +75,9 @@ void create_product_release() {
         cout << "Please Enter the Product Release Date:\n";
         cout << "Required Format: YYYY-MM-DD\n";
         getline(cin, release_date);
-
+        if (release_date.empty()) {
+            break;
+        }
         //Check if inputted date is in correct format 
         if (release_date.length() == 10 && release_date[4] == '-' && release_date[7] == '-' ) {
             month_str = release_date.substr(5,6);
@@ -202,12 +206,16 @@ void update_product_release() {
 
         int month_int;
         int day_int;
-
+        cin.ignore(100000, '\n');
         cout << "Please Enter the New Product Release Date:\n";
         cout << "Required Format: YYYY-MM-DD\n";
         getline(cin, release_date);
+        if (release_date.empty()) {
+            break;
+        }
 
         //Check if inputted date is in correct format
+
         if (release_date.length() == 10 && release_date[4] == '-' && release_date[7] == '-' ) {
             month_str = release_date.substr(5,6);
             day_str = release_date.substr(8,9);
@@ -223,7 +231,8 @@ void update_product_release() {
                 break;
             }
 
-        } else {
+        }
+        else {
             cout << "Release date must be in correct format!\n";
         }
         if (attempt_num == 1){
