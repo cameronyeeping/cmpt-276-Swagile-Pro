@@ -1,5 +1,7 @@
 /*
  * Module: Issue Queries
+ * Rev. 2 2024/07/30 Original by Cameron Yee-Ping
+ *        Modified add_change_item_query
  * Rev. 1 2024/07/01 Original by Cameron Yee-Ping
  * ------------------------------------------------
  * This module handles all sqlite queries regarding the Issues table. 
@@ -67,7 +69,7 @@ void display_change_request_query();
 */
 void add_change_item_query(std::string change_id,        // change_id for the change item
                             std::string product_name,    // the product name for the issue
-                            std::string future_release,  // anticipated release date
+                            std::string anticipated_release_ID,  // anticipated release ID
                             std::string description      // description of the issue that needs to be changed
                             );
 //===========================================================

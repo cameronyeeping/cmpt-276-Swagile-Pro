@@ -1,5 +1,7 @@
 /*
  * Module: User Maintenance
+ * Rev 3. - 2024-07-30 Modified by Dylan Dang
+          - Fixed invalid trial bugs
  * Rev 2. - 2024-07-29 Modified by Dylan Dang
  *        - Fixed 5 wrong attempt loop
  * Rev 1. - 2024-07-15 Original by William Phan
@@ -28,11 +30,12 @@ void create_user() {
     string email;
     string department;
 
+    cin.ignore(10000, '\n');
     //User has 5 attempts to provide a valid input, if number of attempt exceeds 5, they are redirected to the main menu
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User First Name:\n";
         cout << "Maximum Length: 30 Characters \n";
-        cin >> first_name;
+        getline(cin, first_name);
         if (first_name.length() <= 30) {
             break;
         }
@@ -49,7 +52,7 @@ void create_user() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Last Name:\n";
         cout << "Maximum Length: 30 Characters \n";
-        cin >> last_name;
+        getline(cin, last_name);
         if (last_name.length() <= 30) {
             break;
         } else {
@@ -66,7 +69,7 @@ void create_user() {
         cout << "Please Enter the User Phone Number:\n";
         cout << "Required Length: 10 Characters \n";
         cout << "Format: 1231231234 \n";
-        cin >> phone_number;
+        getline(cin, phone_number);
         if (phone_number.length() == 10) {
             break;
         } else {
@@ -83,7 +86,7 @@ void create_user() {
         cout << "Please Enter the User Email:\n";
         cout << "Maximum Length: 50 Characters \n";
         cout << "Format: example@example.com \n";
-        cin >> email;
+        getline(cin, email);
         if (email.length() <= 50) {
             break;
         } else {
@@ -99,7 +102,7 @@ void create_user() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Department:\n";
         cout << "Maximum Length: 50 Characters\n";
-        cin >> department;
+        getline(cin, department);
         if (department.length() <= 50) {
             break;
         } else {
@@ -121,7 +124,7 @@ void create_user() {
     cout << "User Email: " << email << "\n";
     cout << "User Department: " << department << "\n";
     cout << "Do you want to add this user? (Y/N)\n";
-    cin >> confirm_input;
+    getline(cin, confirm_input);
 
     if (confirm_input == "Y" || confirm_input == "y"){
         add_user_query (first_name,  
@@ -153,11 +156,12 @@ void update_user() {
     string email;
     string department;
 
+    cin.ignore(10000, '\n');
     //Display all current users in the database
     display_users_query();
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the UserID of the User:\n";
-        cin >> user_id;
+        getline(cin, user_id);
         //Check if userID is valid
         if (search_user_id_query(user_id) == true) { 
             break;
@@ -174,7 +178,7 @@ void update_user() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User First Name:\n";
         cout << "Maximum Length: 30 Characters \n";
-        cin >> first_name;
+        getline(cin, first_name);
         if (first_name.length() <= 30) {
             break;
         }
@@ -191,7 +195,7 @@ void update_user() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Last Name:\n";
         cout << "Maximum Length: 30 Characters \n";
-        cin >> last_name;
+        getline(cin, last_name);
         if (last_name.length() <= 30) {
             break;
         } else {
@@ -207,7 +211,7 @@ void update_user() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Phone Number:\n";
         cout << "Required Length: 10 Characters \n";
-        cin >> phone_number;
+        getline(cin, phone_number);
         if (phone_number.length() == 10) {
             break;
         } else {
@@ -224,7 +228,7 @@ void update_user() {
         cout << "Please Enter the User Email:\n";
         cout << "Maximum Length: 50 Characters \n";
         cout << "Format: example@example.com \n";
-        cin >> email;
+        getline(cin, email);
         if (email.length() <= 50) {
             break;
         } else {
@@ -240,7 +244,7 @@ void update_user() {
     for (int attempt_num = 5; attempt_num > 0; attempt_num--) { 
         cout << "Please Enter the User Department:\n";
         cout << "Maximum Length: 50 Characters\n";
-        cin >> department;
+        getline(cin, department);
         if (department.length() <= 50) {
             break;
         } else {
@@ -262,7 +266,7 @@ void update_user() {
     cout << "User Email: " << email << "\n";
     cout << "User Department: " << department << "\n";
     cout << "Do you want to confirm the updated user? (Y/N)\n";
-    cin >> confirm_input;
+    getline(cin, confirm_input);
 
     if (confirm_input == "Y" || confirm_input == "y"){
         update_user_query (user_id,  

@@ -34,37 +34,9 @@ void update_product_release();
 //==============================
 
 /*
- * delete_product_release() first displays all available products in the database, and then prompts the 
- * user for a product name. After checking the validity of the input, it passes control to the product 
- * queries module to delete the product release.
-*/
-void delete_product_release();
-//==============================
-
-/*
  * display_product_releases() displays all product releases in the database.
 */
 void display_product_releases();
-//==============================
-
-/*
- * create_product() is used to create a new product (e.g. iPhone 15) in the product table.
-*/
-void create_product();
-//==============================
-
-/*
- * update_product() is used to modify an existing product in the database. It first accepts a product name 
- * and then its attributes, and modifies the corresponding product
-*/
-void update_product();
-//==============================
-
-/*
- * delete_product() is used to delete an existing product in the database. It accepts a product name,
- * then passes control to the product queries module for deletion.
-*/
-void delete_product();
 //==============================
 
 /*
